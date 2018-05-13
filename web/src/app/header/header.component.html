@@ -1,29 +1,33 @@
 <header>
-  <nav class="navbar">
-    <a class="navbar-brand" href="/">
+  <nav class="navbar" id="navbarToggleExternalContent">
+    <div class="brand-wrapper">
+      <a class="navbar-brand" href="/">
         <span class="name">Steve</span>
         <span class="position">Web Developer</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <ul class="nav justify-content-end">
-      <li class="nav-item">
-        <a class="nav-link active" routerLink="home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="portfolio">Portfolio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="blog">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " routerLink="contact">Contact</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link ">Feature</a>
-      </li>
-    </ul>
+      </a>
+      <a class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarToggleExternalContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="bars"></span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="portfolio">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="blog">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " routerLink="contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ">Feature</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </header>

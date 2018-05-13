@@ -4,8 +4,9 @@ header {
         .name{
             color: #fefefe;
             background-color:#17a686;
-            padding:2px 12px;
+            padding:6px 18px;
             font-size:14px;
+            font-weight: 600;
         }
         .position{
             margin-left:8px;
@@ -19,5 +20,87 @@ header {
         &:hover {
             color: #5ac1ae
         }
+    }
+    .navbar-toggler{
+        background-color: #222222;
+        padding:0;
+        width: 22px;
+        height:35px;
+        -webkit-appearance: none;
+        .bars{
+            color:#dddddd;
+            &, &:before, &:after{
+                content: '';
+                display: block;
+                height: 2px;
+                transition: all 0.2s ease-out;
+                background-color:#fff;
+                width: 22px;
+                position: relative;
+                transition: all 0.2s ease-out;
+            }
+            &{
+                top:14px;
+            }
+        }
+        &.collapsed .bars{
+            &{
+                background: #fff !important;
+            }
+            &:before{
+                transform: rotatez(0deg) translate(0px, -7px);
+            }
+            &:after{
+                transform: rotatez(0deg) translate(0px, 7px);
+            }
+        }
+        & .bars{ //X
+            &:before{
+                transform: rotatez(-45deg) translate(-1px, 1px);
+            }
+            &:after{
+                transform: rotatez(45deg) translate(0px, 0px);
+            }
+            &{
+                background: none !important;
+            }
+        }
+
+    }
+    .brand-wrapper{
+        padding: 18px 14px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+}
+@media (max-width: 949px){
+    .navbar-collapse .nav{
+        flex-direction: column !important;
+        text-align: left;
+        width: 100%;
+    }
+    .brand-wrapper{
+        width:100%;
+    }
+    .nav-item a{
+        border-top: 1px solid #333;
+    }
+    .navbar-toggler{
+        display:flex;
+    }
+}
+
+@media (min-width: 950px) { 
+    .navbar-toggler{
+        display:none;
+    }
+    .navbar-collapse {
+        flex-basis: auto;
+        flex-grow: initial;
+        align-items: center;
+        display:block !important;
     }
 }
