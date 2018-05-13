@@ -1,0 +1,23 @@
+header {
+    background-color: #222222;
+    .navbar-brand{
+        .name{
+            color: #fefefe;
+            background-color:#17a686;
+            padding:2px 4px;
+            font-size:14px;
+        }
+        .position{
+            margin-left:8px;
+            color:#fefefe;
+            font-size: 14px;
+        }
+    }
+    .nav-item a{
+        color: #dddddd;
+        &.active,
+        &:hover {
+            color: #5ac1ae
+        }
+    }
+}
