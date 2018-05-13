@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     PortfolioComponent,
     BlogComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
