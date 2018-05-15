@@ -1,4 +1,14 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+
+const ROUTES = [
+  { path: 'home'},
+  { path: 'resume'},
+  { path: 'portfolio'},
+  { path: 'contact'},
+  { path: 'blog'},
+];
+
 
 @Component({
   selector: 'app-header',
@@ -7,9 +17,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  routes;
+
+  constructor(private router:Router) { }
 
   ngOnInit() {
+      this.routes = ROUTES;
   }
 
 }

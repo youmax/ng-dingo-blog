@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TemplatePortfolioComponent } from './portfolio/portfolio.component';
+import { AsideComponent } from './aside/aside.component';
 
 @NgModule({
   imports: [
@@ -13,11 +14,13 @@ import { TemplatePortfolioComponent } from './portfolio/portfolio.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
+    AsideComponent,
     TemplatePortfolioComponent
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
+    AsideComponent,
     TemplatePortfolioComponent
   ]
 })

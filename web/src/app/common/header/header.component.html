@@ -12,20 +12,8 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="portfolio">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="blog">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " routerLink="contact">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link ">Feature</a>
+        <li class="nav-item" [routerLinkActive]="['']" *ngFor="let route of routes" #router="routerLinkActive">
+          <a class="nav-link" [ngClass]="router.isActive?'active':''" [routerLink]="[route.path]">{{ route.path }}</a>
         </li>
       </ul>
     </div>
