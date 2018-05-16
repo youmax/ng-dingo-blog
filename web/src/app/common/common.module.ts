@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TemplatePortfolioComponent } from './portfolio/portfolio.component';
 import { AsideComponent } from './aside/aside.component';
+import { TitleComponent } from './title/title.component';
 
 @NgModule({
   imports: [
@@ -15,13 +16,15 @@ import { AsideComponent } from './aside/aside.component';
     HeaderComponent,
     FooterComponent,
     AsideComponent,
-    TemplatePortfolioComponent
+    TemplatePortfolioComponent,
+    TitleComponent
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     AsideComponent,
-    TemplatePortfolioComponent
+    TemplatePortfolioComponent,
+    TitleComponent
   ]
 })
 export class CommonTemplateModule { }
