@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { AgmCoreModule } from '@agm/core';
 
 import { CommonTemplateModule } from './common/common.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +22,9 @@ import { ContactComponent } from './contact/contact.component';
     CommonModule,
     CommonTemplateModule,
     AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBFEgEHlo2F6fcMOh_nH0hMxEHi5RAV2gk'
+    })
   ],
   declarations: [
     ResumeComponent,

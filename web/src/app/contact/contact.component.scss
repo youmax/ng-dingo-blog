@@ -1,0 +1,25 @@
+.btn {
+  background: #5ac1ae;
+  color: #fff;
+  padding: 0.5em 1em;
+  font-size: .923em;
+  font-weight: 400;
+  &:hover {
+    background: #3fa995;
+  }
+}
+
+label {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+h4 {
+  margin-top: 40px;
+  color: #222;
+  font-weight: 600;
+  font-size: 1.615em;
+}
+
+agm-map {
+  height: 450px;
+}
