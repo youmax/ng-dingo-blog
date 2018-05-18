@@ -2,7 +2,6 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-9">
-      <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
       <h4>Contact me for a quote</h4>
       <p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
         elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
@@ -23,6 +22,11 @@
           </div>
           <button type="submit" class="btn">Submit Form</button>
         </form>
+        <agm-map [latitude]="25.000049" [longitude]="121.512878" [zoom]="10">
+          <agm-marker [latitude]="25.000049" [longitude]="121.512878">
+            <agm-info-window>Home</agm-info-window>
+          </agm-marker>
+        </agm-map>
     </div>
     <div class="col-md-3">
       <app-aside></app-aside>
