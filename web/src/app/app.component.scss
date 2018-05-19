@@ -1,15 +1,30 @@
+main {
+  background-image: url(http://totaltheme.wpengine.com/james/wp-content/uploads/sites/73/2016/10/Background1.jpg) !important;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: #ddd;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Raleway";
+  line-height: 1.65;
+  font-size: 13px;
+  color: #666;
+}
+
 .container {
-    background-color: #fff;
-    margin: 0 auto;
-    padding: 0;
-    max-width: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
-    .wrapper {
-        padding: 0 40px;
-    }
-    .container {
-        width: 1000px;
-    }
+  .wrapper {
+    padding: 0 40px;
+  }
+  .container {
+    width: 1000px;
+  }
 }
