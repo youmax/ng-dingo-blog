@@ -1,10 +1,10 @@
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Route } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { CommonTemplateModule } from '../../common/common.module';
 import { NotfoundComponent } from './notfound.component';
 
-const routes: Route = [
+const routes: Routes = [
   {path: '', component: NotfoundComponent}
 ];
 
