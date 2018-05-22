@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorService } from '@app/core';
+import { AuthorService, Author } from '@app/core';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +8,15 @@ import { AuthorService } from '@app/core';
 })
 export class PageHomeComponent implements OnInit {
 
+  author: Author;
+
   constructor(private authorService: AuthorService) { }
 
   ngOnInit() {
-    console.log(this.authorService.get());
+    this.authorService.get().subscribe(
+      (data: Author) => this.author = { ...data }
+    );
+    console.log(this.author);
   }
 
 }
