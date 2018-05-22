@@ -4,12 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'home', loadChildren: './pages/home/home.module#HomeModule' },
-  { path: 'resume', loadChildren: './pages/resume/resume.module#ResumeModule' },
-  { path: 'portfolio', loadChildren: './pages/portfolio/portfolio.module#PortfolioModule' },
-  { path: 'contact', loadChildren: './pages/contact/contact.module#ContactModule' },
-  { path: 'blog', loadChildren: './pages/blog/blog.module#BlogModule' },
-  { path: '**', loadChildren: './pages/notfound/notfound.module#NotfoundModule' }
+  { path: 'home', loadChildren: './pages/home/home.module#PageHomeModule' },
+  { path: 'resume', loadChildren: './pages/resume/resume.module#PageResumeModule' },
+  { path: 'portfolio', loadChildren: './pages/portfolio/portfolio.module#PagePortfolioModule' },
+  { path: 'contact', loadChildren: './pages/contact/contact.module#PageContactModule' },
+  { path: 'blog', loadChildren: './pages/blog/blog.module#PageBlogModule' },
+  { path: '**', loadChildren: './pages/notfound/notfound.module#PageNotfoundModule' }
 ];
 
 @NgModule({

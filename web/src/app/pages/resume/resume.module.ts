@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { CommonTemplateModule } from '../../common/common.module';
+
+import { TitleModule } from '../../shared/title/title.module';
+import { AsideModule } from '../../shared/aside/aside.module';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+
 import { ResumeComponent } from './resume.component';
 
 const routes: Routes = [
@@ -12,7 +15,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    CommonTemplateModule,
+    TitleModule,
+    AsideModule,
     RouterModule.forChild(routes),
     NgCircleProgressModule.forRoot()
   ],
@@ -20,4 +24,4 @@ const routes: Routes = [
     ResumeComponent
   ]
 })
-export class ResumeModule { }
+export class PageResumeModule { }

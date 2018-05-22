@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { CommonTemplateModule } from '../../common/common.module';
+
+import { TitleModule } from '../../shared/title/title.module';
+import { AsideModule } from '../../shared/aside/aside.module';
+
 import { BlogComponent } from './blog.component';
 
 const routes: Routes = [
@@ -11,11 +14,12 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    CommonTemplateModule,
+    TitleModule,
+    AsideModule,
     RouterModule.forChild(routes),
   ],
   declarations: [
     BlogComponent
   ]
 })
-export class BlogModule { }
+export class PageBlogModule { }

@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { CommonTemplateModule } from '../../common/common.module';
+
+import { TitleModule } from '../../shared/title/title.module';
+import { AsideModule } from '../../shared/aside/aside.module';
+import { PortfolioModule } from '../../shared/portfolio/portfolio.module';
+
 import { PortfolioComponent } from './portfolio.component';
 
 const routes: Routes = [
@@ -11,11 +15,13 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    CommonTemplateModule,
+    TitleModule,
+    AsideModule,
+    PortfolioModule,
     RouterModule.forChild(routes),
   ],
   declarations: [
     PortfolioComponent
   ]
 })
-export class PortfolioModule { }
+export class PagePortfolioModule { }
