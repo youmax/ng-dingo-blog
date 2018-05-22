@@ -2,14 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TitleModule } from '../../shared/title/title.module';
-import { AsideModule } from '../../shared/aside/aside.module';
+import { TitleModule, AsideModule } from '@app/shared';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
-import { ResumeComponent } from './resume.component';
+import { PageResumeComponent } from './resume.component';
 
 const routes: Routes = [
-  { path: '', component: ResumeComponent }
+  { path: '', component: PageResumeComponent }
 ];
 
 @NgModule({
@@ -21,7 +20,7 @@ const routes: Routes = [
     NgCircleProgressModule.forRoot()
   ],
   declarations: [
-    ResumeComponent
+    PageResumeComponent
   ]
 })
 export class PageResumeModule { }

@@ -2,12 +2,12 @@ import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AsideModule } from '../../shared/aside/aside.module';
+import { AsideModule } from '@app/shared';
 
-import { NotfoundComponent } from './notfound.component';
+import { PageNotfoundComponent } from './notfound.component';
 
 const routes: Routes = [
-  {path: '', component: NotfoundComponent}
+  {path: '', component: PageNotfoundComponent}
 ];
 
 @NgModule({
@@ -17,7 +17,7 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [
-    NotfoundComponent
+    PageNotfoundComponent
   ]
 })
 export class PageNotfoundModule { }

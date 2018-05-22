@@ -5,10 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
-
-  lat: Number = 51.678418;
-  lng: Number = 7.809007;
+export class PageContactComponent implements OnInit {
 
   constructor() { }
 

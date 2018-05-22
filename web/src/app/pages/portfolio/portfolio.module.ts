@@ -2,26 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TitleModule } from '../../shared/title/title.module';
-import { AsideModule } from '../../shared/aside/aside.module';
-import { PortfolioModule } from '../../shared/portfolio/portfolio.module';
+import { TitleModule, PortfolioModule, AsideModule } from '@app/shared';
 
-import { PortfolioComponent } from './portfolio.component';
+import { PagePortfolioComponent } from './portfolio.component';
 
 const routes: Routes = [
-  { path: '', component: PortfolioComponent }
+  { path: '', component: PagePortfolioComponent }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     TitleModule,
-    AsideModule,
     PortfolioModule,
+    AsideModule,
     RouterModule.forChild(routes),
   ],
   declarations: [
-    PortfolioComponent
+    PagePortfolioComponent
   ]
 })
 export class PagePortfolioModule { }

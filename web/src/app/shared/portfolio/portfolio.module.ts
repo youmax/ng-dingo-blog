@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TemplatePortfolioComponent} from './portfolio.component';
+import { PortfolioComponent } from './portfolio.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   exports: [
-    TemplatePortfolioComponent
+    PortfolioComponent
   ],
   declarations: [
-    TemplatePortfolioComponent
+    PortfolioComponent
   ]
 })
 export class PortfolioModule { }
