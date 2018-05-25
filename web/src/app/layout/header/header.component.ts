@@ -1,28 +1,25 @@
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-
-const ROUTES = [
-  { path: 'home'},
-  { path: 'resume'},
-  { path: 'portfolio'},
-  { path: 'contact'},
-  { path: 'blog'},
-];
-
+import { Router } from "@angular/router";
+import { Component, OnInit } from "@angular/core";
+import { Menu, MenuService } from "@app/core";
+import { GlobalService } from "@app/core";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
+  menus: Menu[];
 
-  routes;
-
-  constructor(private router:Router) { }
+  constructor(
+    private router: Router,
+    private menuService: MenuService,
+    private GLOBALS: GlobalService
+  ) {}
 
   ngOnInit() {
-      this.routes = ROUTES;
+    this.menuService.get().subscribe(menus => {
+      this.menus = menus;
+    });
   }
-
 }

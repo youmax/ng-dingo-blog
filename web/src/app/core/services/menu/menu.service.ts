@@ -3,19 +3,19 @@ import { HttpClient } from "@angular/common/http";
 import { BaseService } from "../base.service";
 import { catchError, retry } from "rxjs/operators";
 
-import { Author } from "./author.model";
+import { Menu } from "./menu.model";
 
 @Injectable({
   providedIn: "root"
 })
-export class AuthorService extends BaseService {
+export class MenuService extends BaseService {
   constructor(private http: HttpClient) {
     super();
   }
 
   public get() {
     return this.http
-      .get<Author>("http://localhost:3000/authors/1")
+      .get<Menu[]>("http://localhost:3000/menus")
       .pipe(catchError(this.handleError));
   }
 }
