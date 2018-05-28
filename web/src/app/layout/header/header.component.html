@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar box-shadow" id="navbarToggleExternalContent">
     <div class="brand-wrapper">
-      <a class="navbar-brand" href="/" *ngIf="GLOBALS.author">
+      <a class="navbar-brand" routerLink="/" *ngIf="GLOBALS.author">
         <span class="name">{{ GLOBALS.author.name }}</span>
         <span class="position">{{ GLOBALS.author.job }}</span>
       </a>

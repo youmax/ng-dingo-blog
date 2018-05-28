@@ -13,7 +13,6 @@ export class GlobalService {
   public refreshAuthor() {
     this.authorService.get().subscribe(author => {
       this.author = author;
-      return true;
     });
   }
 }
