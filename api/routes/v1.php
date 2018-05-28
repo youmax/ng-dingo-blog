@@ -9,8 +9,12 @@
 | It is a breeze. Simply tell Lumen the URIs it should respond to
 | and give it the Closure to call when that URI is requested.
 |
-*/
+ */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$api = app('Dingo\Api\Routing\Router');
+app('Dingo\Api\Transformer\Factory')->register('Author', 'AuthorTransformer');
+
+$api->version('v1', ['namespace' => 'App\Http\Controllers'], function ($api) {
+    $api->get('authors', ['as' => 'authors.index', 'uses' => 'AuthorController@index']);
+    $api->get('authors/{id}', ['as' => 'authors.show', 'uses' => 'AuthorController@show']);
 });
