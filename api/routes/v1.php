@@ -15,6 +15,10 @@ $api = app('Dingo\Api\Routing\Router');
 app('Dingo\Api\Transformer\Factory')->register('Author', 'AuthorTransformer');
 
 $api->version('v1', ['namespace' => 'App\Http\Controllers'], function ($api) {
+    # Author routes
     $api->get('authors', ['as' => 'authors.index', 'uses' => 'AuthorController@index']);
     $api->get('authors/{id}', ['as' => 'authors.show', 'uses' => 'AuthorController@show']);
+    # Menu routes
+    $api->get('menus', ['as' => 'menus.index', 'uses' => 'MenuController@index']);
+    $api->get('menus/{id}', ['as' => 'menus.show', 'uses' => 'MenuController@show']);
 });

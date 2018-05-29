@@ -4,6 +4,6 @@ namespace App\Models;
 
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
-class Author extends Eloquent
+class Menu extends Eloquent
 {
 }

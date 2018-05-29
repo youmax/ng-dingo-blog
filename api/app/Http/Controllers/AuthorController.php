@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Dingo\Api\Http\Request;
+
 use App\Models\Author;
 use App\Transformers\AuthorTransformer;
-use Illuminate\Http\Request;
 
 /**
  * Author resource representation
  *
- * @Resource("Author",uri="/author")
+ * @Resource("Author",uri="/authors")
  */
 class AuthorController extends Controller
 {
@@ -32,7 +33,7 @@ class AuthorController extends Controller
      */
     public function index(Request $request)
     {
-        $authors = Author::paginate(10);
+        $authors = Author::paginate(1);
         return $this->response->paginator($authors, new AuthorTransformer);
     }
     /**
@@ -40,9 +41,9 @@ class AuthorController extends Controller
      *
      * @return void
      */
-    public function show($id = null)
+    public function show($id)
     {
-        $author = Author::findOrFail($id);
-        return $this->response->item($author);
+        $author = Author::findOrFail((int)$id);
+        return $this->response->item($author, new AuthorTransformer);
     }
 }
