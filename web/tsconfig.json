@@ -17,9 +17,6 @@
       "dom"
     ],
     "paths": {
-      "@app": [
-        "app/*"
-      ],
       "@app/core": [
         "app/core/index.ts"
       ],
@@ -31,6 +28,9 @@
       ],
       "@app/shared": [
         "app/shared/index.ts"
+      ],
+      "@env/*": [
+        "environments/*"
       ]
     }
   },

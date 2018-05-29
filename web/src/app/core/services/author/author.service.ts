@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { BaseService } from "../base.service";
 import { catchError, retry } from "rxjs/operators";
 
+import { BaseModel } from "../base.model";
 import { Author } from "./author.model";
 
 @Injectable({
@@ -15,7 +16,7 @@ export class AuthorService extends BaseService {
 
   public get() {
     return this.http
-      .get<Author>("http://localhost:3000/authors/1")
+      .get<BaseModel<Author>>(this.baseUrl + "/authors/1")
       .pipe(catchError(this.handleError));
   }
 }

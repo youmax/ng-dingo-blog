@@ -12,7 +12,8 @@ export class GlobalService {
 
   public refreshAuthor() {
     this.authorService.get().subscribe(author => {
-      this.author = author;
+      const data = author.data as Author;
+      this.author = data;
     });
   }
 }

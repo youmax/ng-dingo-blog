@@ -1,4 +1,5 @@
 export * from "./core.module";
+export * from "./services/base.model";
 export * from "./services/author/author.service";
 export * from "./services/author/author.model";
 export * from "./services/menu/menu.service";

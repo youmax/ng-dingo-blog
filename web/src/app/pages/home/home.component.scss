@@ -12,11 +12,13 @@ figure {
     font-size: 16px;
     color: #bbbbbb;
   }
-}
-
-.btn {
-  background-color: #e5bf6c;
-  color: white;
+  .btn {
+    background-color: #e5bf6c;
+    color: white;
+    &:hover {
+      background: #ddac41;
+    }
+  }
 }
 
 .service {
@@ -37,17 +39,16 @@ figure {
       font-size: 28px;
       margin-bottom: 20px;
     }
-    &:nth-child(4n+0) .fa {
+    &:nth-child(4n + 0) .fa {
       color: #5ab5a3;
     }
-    &:nth-child(4n+1) .fa {
+    &:nth-child(4n + 1) .fa {
       color: #ce6859;
-      ;
     }
-    &:nth-child(4n+2) .fa {
+    &:nth-child(4n + 2) .fa {
       color: #5a9bc5;
     }
-    &:nth-child(4n+3) .fa {
+    &:nth-child(4n + 3) .fa {
       color: #8e669a;
     }
     margin-bottom: 40px;
