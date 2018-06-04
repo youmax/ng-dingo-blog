@@ -12,32 +12,11 @@
     </p>
   </div>
   <div class="row service">
-    <div class="col-md-3 text-center">
-      <span class="fa fa-graduation-cap" aria-hidden="true"></span>
-      <h5>Professional Developer</h5>
+    <div class="col-md-3 text-center" *ngFor="let service of GLOBALS.author.services">
+      <span class="fa {{ service.icon }}" aria-hidden="true"></span>
+      <h5>{{ service.title }}</h5>
       <p>
-        I am a professional developer and graphic designer with many years of experience.
-      </p>
-    </div>
-    <div class="col-md-3 text-center">
-      <span class="fa fa-star" aria-hidden="true"></span>
-      <h5>Happy Customers</h5>
-      <p>
-        With over 1,000 satisfied clients I stand behind my work as one of the best designers out there.
-      </p>
-    </div>
-    <div class="col-md-3 text-center">
-      <span class="fa fa-modx" aria-hidden="true"></span>
-      <h5>Logo Design</h5>
-      <p>
-        If you require a custom logo design for your site or brand I will be the one for the job.
-      </p>
-    </div>
-    <div class="col-md-3 text-center">
-      <span class="fa fa-shopping-basket" aria-hidden="true"></span>
-      <h5>E-Commerce</h5>
-      <p>
-        I also have experience developing E-Commerce sites using WooCommerce.
+        {{ service.desc }}
       </p>
     </div>
   </div>

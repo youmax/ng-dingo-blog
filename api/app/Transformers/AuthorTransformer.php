@@ -13,7 +13,10 @@ class AuthorTransformer extends TransformerAbstract
             'id' => (int) $author->id,
             'name' => $author->name,
             'job' => $author->job,
-            'greeting' => $author->greeting
+            'greeting' => $author->greeting,
+            'services' => $author->services,
+            'location' => $author->location,
+            'skills' => $author->skills,
         ];
     }
 }

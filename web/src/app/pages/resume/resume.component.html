@@ -20,35 +20,14 @@
           <div class="card">
             <header>Profession Skills</header>
             <div class="card-body">
-              <h6 class="card-subtitle mb-2 text-muted">HTML & css
-                <span>90%</span>
-              </h6>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" [style.width.%]="90" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <h6 class="card-subtitle mb-2 text-muted">HTML & css
-                <span>90%</span>
-              </h6>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" [style.width.%]="90" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <h6 class="card-subtitle mb-2 text-muted">HTML & css
-                <span>90%</span>
-              </h6>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" [style.width.%]="90" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <h6 class="card-subtitle mb-2 text-muted">HTML & css
-                <span>90%</span>
-              </h6>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" [style.width.%]="90" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <h6 class="card-subtitle mb-2 text-muted">HTML & css
-                <span>90%</span>
-              </h6>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" [style.width.%]="90" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              <div *ngFor="let skill of GLOBALS.author.skills">
+                <h6 class="card-subtitle mb-2 text-muted">
+                  {{ skill.name }}
+                  <span>{{ skill.percent }}%</span>
+                </h6>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" [style.width.%]="skill.percent" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
               </div>
             </div>
           </div>

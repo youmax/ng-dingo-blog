@@ -22,8 +22,8 @@
           </div>
           <button type="submit" class="btn">Submit Form</button>
         </form>
-        <agm-map [latitude]="25.000049" [longitude]="121.512878" [zoom]="10">
-          <agm-marker [latitude]="25.000049" [longitude]="121.512878">
+        <agm-map [latitude]="GLOBALS.author.location.latitude" [longitude]="GLOBALS.author.location.longitude" [zoom]="10">
+          <agm-marker [latitude]="GLOBALS.author.location.latitude" [longitude]="GLOBALS.author.location.longitude">
             <agm-info-window>Home</agm-info-window>
           </agm-marker>
         </agm-map>
