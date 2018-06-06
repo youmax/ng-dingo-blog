@@ -17,6 +17,9 @@ class AuthorTransformer extends TransformerAbstract
             'services' => $author->services,
             'location' => $author->location,
             'skills' => $author->skills,
+            'educations' => collect($author->educations)->sortByDesc(function ($education, $key) {
+                return (int) array_last(explode('-', $education['date']));
+            })->values()
         ];
     }
 }

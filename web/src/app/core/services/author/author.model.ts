@@ -3,7 +3,7 @@ export interface AuthorSkill {
   percent: number;
 }
 
-export interface AuthorService {
+export interface AuthorCustomService {
   icon: string;
   title: string;
   desc: string;
@@ -19,7 +19,7 @@ export interface Author {
   name: string;
   job: string;
   greeting: string;
-  services: AuthorService[];
+  services: AuthorCustomService [];
   location: AuthorLocation;
   skills: AuthorSkill[];
 }

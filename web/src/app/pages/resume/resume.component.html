@@ -19,8 +19,8 @@
         <div class="col-lg-5">
           <div class="card">
             <header>Profession Skills</header>
-            <div class="card-body">
-              <div *ngFor="let skill of GLOBALS.author.skills">
+            <div class="card-body" >
+              <div *ngFor="let skill of GLOBALS.author.skills.slice(0,5)">
                 <h6 class="card-subtitle mb-2 text-muted">
                   {{ skill.name }}
                   <span>{{ skill.percent }}%</span>
@@ -38,62 +38,21 @@
             <header>Additional Skills</header>
             <div class="card-body">
               <div class="row">
-                <div class="col-4">
-                  <circle-progress [percent]="80" [radius]="40" [outerStrokeWidth]="10" [innerStrokeWidth]="0" [outerStrokeColor]="'#4882c2'"
-                    [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300" [responsive]="true" [subtitle]="'TeamWork'"></circle-progress>
-                </div>
-                <div class="col-4">
-                  <circle-progress [percent]="60" [radius]="40" [outerStrokeWidth]="10" [innerStrokeWidth]="0" [outerStrokeColor]="'#4882c2'"
-                    [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300" [responsive]="true" [subtitle]="'Database'"></circle-progress>
-
-                </div>
-                <div class="col-4">
-                  <circle-progress [percent]="70" [radius]="40" [outerStrokeWidth]="10" [innerStrokeWidth]="0" [outerStrokeColor]="'#4882c2'"
-                    [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300" [responsive]="true" [subtitle]="'Linux'"></circle-progress>
+                <div class="col-4" *ngFor="let skill of GLOBALS.author.skills.slice(5,8)">
+                  <circle-progress [percent]="skill.percent" [radius]="40" [outerStrokeWidth]="10" [innerStrokeWidth]="0" [outerStrokeColor]="'#4882c2'"
+                    [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300" [responsive]="true" [subtitle]="skill.name"></circle-progress>
                 </div>
                 <div class="col checkbox-group">
                   <div class="row">
-                    <div class="col-6">
+                    <div class="col-6" *ngFor="let skill of GLOBALS.author.skills.slice(8,14)">
                       <div class="form-check">
                         <i class="fa fa-check-square-o" aria-hidden="true"></i>
                         <label class="form-check-label" for="gridCheck">
-                          Check me out
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                        <label class="form-check-label" for="gridCheck">
-                          Check me out
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                        <label class="form-check-label" for="gridCheck">
-                          Check me out
+                          {{ skill.name }}
                         </label>
                       </div>
                     </div>
 
-                    <div class="col-6">
-                      <div class="form-check">
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                        <label class="form-check-label" for="gridCheck">
-                          Check me out
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                        <label class="form-check-label" for="gridCheck">
-                          Check me out
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                        <label class="form-check-label" for="gridCheck">
-                          Check me out
-                        </label>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -105,23 +64,14 @@
 
       <h3> education </h3>
       <div class="card-deck">
-        <div class="card">
-          <header>2010-2012</header>
+        <div class="card" *ngFor="let education of GLOBALS.author.educations">
+          <header>{{ education.date }}</header>
           <div class="card-body">
-            <h6 class="card-subtitle mb-2 text-muted"> Lipro University</h6>
-            I completed this degree from this prestigious insitution. I successful completed all the credits without any fallout and
-            got A grade overall.
+            <h6 class="card-subtitle mb-2 text-muted"> {{ education.school }}</h6>
+            <i> {{ education.degree }}</i><br>
+              {{ education.desc }}
           </div>
         </div>
-        <div class="card">
-          <header>2008-2010</header>
-          <div class="card-body">
-            <h6 class="card-subtitle mb-2 text-muted"> Lipro University</h6>
-            I completed this degree from this prestigious insitution. I successful completed all the credits without any fallout and
-            got A grade overall.
-          </div>
-        </div>
-
       </div>
 
       <h3> experience </h3>
