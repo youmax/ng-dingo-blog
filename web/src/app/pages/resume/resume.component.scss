@@ -1,6 +1,9 @@
 .introduction {
   width: 100%;
   margin-bottom: 20px;
+  a{
+    text-decoration: none;
+  }
 }
 
 .progress {
@@ -30,6 +33,11 @@
     margin-left: -1.25rem;
     margin-right: 1rem;
     color: #4882c2;
+  }
+  .fa{
+    width: inherit;
+    height: inherit;
+    line-height: inherit;
   }
 }
 

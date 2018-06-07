@@ -4,12 +4,12 @@
     <div class="col-md-9">
       <div class="card introduction">
         <div class="card-body">
-          <h5 class="card-title">Hello, I'm Nick</h5>
-          <h6 class="card-subtitle mb-2 text-muted">PHP developer</h6>
-          <p class="card-text">Hello! I’m Nick. PHP Developer with over 8 years of experience. Experienced with all stages of the development
-            cycle for dynamic web projects. Having an in-depth knowledge including advanced HTML5, CSS3, JavaScript, jQuery,
-            Angular2+, Laravel, PHP. Strong background in management and leadership.</p>
-          <a href="https://github.com/youmax" class="fa fa-github">Github</a>
+          <h5 class="card-title">Hello, I'm {{ GLOBALS.author.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ GLOBALS.author.job }}</h6>
+          <p class="card-text">{{ GLOBALS.author.introduction }}</p>
+          <a href="{{ link.url }}" *ngFor="let link of GLOBALS.author.socialLinks" target="_blank">
+            <span class="fa {{ link.icon }} mr-1"></span>
+          </a>
         </div>
       </div>
 
@@ -19,7 +19,7 @@
         <div class="col-lg-5">
           <div class="card">
             <header>Profession Skills</header>
-            <div class="card-body" >
+            <div class="card-body">
               <div *ngFor="let skill of GLOBALS.author.skills.slice(0,5)">
                 <h6 class="card-subtitle mb-2 text-muted">
                   {{ skill.name }}
@@ -68,8 +68,8 @@
           <header>{{ education.date }}</header>
           <div class="card-body">
             <h6 class="card-subtitle mb-2 text-muted"> {{ education.school }}</h6>
-            <i> {{ education.degree }}</i><br>
-              {{ education.desc }}
+            <i> {{ education.degree }}</i>
+            <br> {{ education.desc }}
           </div>
         </div>
       </div>
@@ -77,22 +77,12 @@
       <h3> experience </h3>
       <div class="row experience">
         <div class="offset-lg-4 col-md-12 col-lg-8 ex-container">
-          <div class="card">
-            <time>Jan 2015 - Current</time>
+          <div class="card" *ngFor="let experience of GLOBALS.author.experiences">
+            <time>{{ experience.date }}</time>
             <div class="card-body">
-              <h5 class="card-title">Full Stack Developer</h5>
-              <h6 class="card-subtitle mb-2 text-muted"> GOGLE</h6>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper lacus tortor, quis bibendum odio mattis vitae. Cras porta
-              massa pretium auctor congue. Suspendisse ante massa, euismod sit amet sem sed, viverra tristique diam.
-            </div>
-          </div>
-          <div class="card">
-            <time>Jan 2015 - Current</time>
-            <div class="card-body">
-              <h5 class="card-title">Full Stack Developer</h5>
-              <h6 class="card-subtitle mb-2 text-muted"> GOGLE</h6>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper lacus tortor, quis bibendum odio mattis vitae. Cras porta
-              massa pretium auctor congue. Suspendisse ante massa, euismod sit amet sem sed, viverra tristique diam.
+              <h5 class="card-title">{{ experience.name }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted"> {{ experience.position }}</h6>
+              {{ experience.desc }}
             </div>
           </div>
         </div>

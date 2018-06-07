@@ -13,8 +13,8 @@
       <p class="description">Don't forget to follow me via my various social media accounts.</p>
       <ul>
         <li>
-          <a href="https://plus.google.com/u/0/+shujiYuan" target="_blank">
-            <span class="fa fa-google-plus" aria-hidden="true"></span>
+          <a href="{{ link.url }}" target="_blank" *ngFor="let link of GLOBALS.author.socialLinks">
+            <span class="fa {{ link.icon }} mr-1" aria-hidden="true"></span>
           </a>
         </li>
       </ul>

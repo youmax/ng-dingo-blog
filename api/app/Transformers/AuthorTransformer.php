@@ -14,12 +14,15 @@ class AuthorTransformer extends TransformerAbstract
             'name' => $author->name,
             'job' => $author->job,
             'greeting' => $author->greeting,
+            'introduction' => $author->introduction,
+            'socialLinks' => $author->socialLinks,
             'services' => $author->services,
             'location' => $author->location,
             'skills' => $author->skills,
             'educations' => collect($author->educations)->sortByDesc(function ($education, $key) {
                 return (int) array_last(explode('-', $education['date']));
-            })->values()
+            })->values(),
+            'experiences' => $author->experiences
         ];
     }
 }
