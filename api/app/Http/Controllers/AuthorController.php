@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Dingo\Api\Http\Request;
-
 use App\Models\Author;
 use App\Transformers\AuthorTransformer;
+use Dingo\Api\Http\Request;
 
 /**
  * Author resource representation
@@ -41,9 +40,14 @@ class AuthorController extends Controller
      *
      * @return void
      */
-    public function show($id)
+    public function show(string $id)
     {
-        $author = Author::findOrFail((int)$id);
+        $author = Author::findOrFail((int) $id);
         return $this->response->item($author, new AuthorTransformer);
+    }
+
+    public function resume(string $name)
+    {
+        return response()->download(storage_path('resume/'.$name.'.pdf'));
     }
 }

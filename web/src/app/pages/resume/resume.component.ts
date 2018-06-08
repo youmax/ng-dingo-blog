@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { GlobalService } from "@app/core";
+import { GlobalService, AuthorService } from "@app/core";
+import { saveAs } from "file-saver/FileSaver";
 
 @Component({
   selector: "app-resume",
@@ -7,8 +8,18 @@ import { GlobalService } from "@app/core";
   styleUrls: ["./resume.component.scss"]
 })
 export class PageResumeComponent implements OnInit {
-  constructor(private GLOBALS: GlobalService) {}
+  constructor(
+    private GLOBALS: GlobalService,
+    private authorService: AuthorService
+  ) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  protected download() {
+    this.authorService
+      .download(this.GLOBALS.author.name)
+      .subscribe(response => {
+        saveAs(response, this.GLOBALS.author.name + ".pdf");
+      });
   }
 }

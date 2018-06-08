@@ -19,4 +19,12 @@ export class AuthorService extends BaseService {
       .get<BaseModel<Author>>(this.baseUrl + "/authors/1")
       .pipe(catchError(this.handleError));
   }
+
+  public download(name: string) {
+    return this.http
+      .get<Blob>(this.baseUrl + "/authors/" + name + "/resume", {
+        responseType: "blob" as "json"
+      })
+      .pipe(catchError(this.handleError));
+  }
 }

@@ -1,7 +1,7 @@
 <app-title name="Resume"></app-title>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-9" id="resume">
       <div class="card introduction">
         <div class="card-body">
           <h5 class="card-title">Hello, I'm {{ GLOBALS.author.name }}</h5>
@@ -10,6 +10,9 @@
           <a href="{{ link.url }}" *ngFor="let link of GLOBALS.author.socialLinks" target="_blank">
             <span class="fa {{ link.icon }} mr-1"></span>
           </a>
+        </div>
+        <div class="card-footer text-center">
+          <a class="btn btn-download" (click)="download()">Download PDF</a>
         </div>
       </div>
 
