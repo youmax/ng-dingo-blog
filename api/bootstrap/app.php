@@ -69,7 +69,9 @@ $app->middleware([
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
 
+$app->configure('app');
 $app->configure('cors');
+$app->configure('translatable');
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers

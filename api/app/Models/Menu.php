@@ -2,8 +2,13 @@
 
 namespace App\Models;
 
-use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
-
-class Menu extends Eloquent
+class Menu extends Model
 {
+
+    public $translatable = ['name'];
+
+    protected $fillable = [
+        'name',
+        'path',
+    ];
 }

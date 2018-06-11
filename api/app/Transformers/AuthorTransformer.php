@@ -7,6 +7,31 @@ use League\Fractal\TransformerAbstract;
 
 class AuthorTransformer extends TransformerAbstract
 {
+
+    protected function translateField(array $values, array $fields)
+    {
+        $translated = [];
+        foreach ($values as $value) {
+            foreach ($fields as $field) {
+                $value[$field] = $value[$field][env('APP_LOCALE')] ?? '';
+            }
+            $translated[] = $value;
+        }
+        return $translated;
+    }
+
+    protected function translateServices($services)
+    {
+        $fields = ['title', 'desc'];
+        return $this->translateField($services, $fields);
+    }
+
+    protected function translateEducations($educations)
+    {
+        $fields = ['school', 'degree', 'desc'];
+        return $this->translateField($educations, $fields);
+    }
+
     public function transform(Author $author)
     {
         return [
@@ -16,13 +41,13 @@ class AuthorTransformer extends TransformerAbstract
             'greeting' => $author->greeting,
             'introduction' => $author->introduction,
             'socialLinks' => $author->socialLinks,
-            'services' => $author->services,
+            'services' => $this->translateServices($author->services),
             'location' => $author->location,
             'skills' => $author->skills,
-            'educations' => collect($author->educations)->sortByDesc(function ($education, $key) {
+            'educations' => collect($this->translateEducations($author->educations))->sortByDesc(function ($education, $key) {
                 return (int) array_last(explode('-', $education['date']));
             })->values(),
-            'experiences' => $author->experiences
+            'experiences' => $author->experiences,
         ];
     }
 }
