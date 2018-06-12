@@ -37,13 +37,14 @@ class MenuController extends Controller
         return $this->response->collection($menus, new MenuTransformer);
     }
     /**
-     * Get Author by id
+     * Get Menu by id
      *
+     * @param string $id
      * @return void
      */
     public function show($id)
     {
-        $menu = Menu::findOrFail((int)$id);
+        $menu = Menu::findOrFail($id);
         return $this->response->item($menu, new MenuTransformer);
     }
 }

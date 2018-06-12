@@ -8,7 +8,7 @@ use League\Fractal\TransformerAbstract;
 class AuthorTransformer extends TransformerAbstract
 {
 
-    protected function translateField(array $values, array $fields)
+    protected function translateFields(array $values, array $fields)
     {
         $translated = [];
         foreach ($values as $value) {
@@ -20,34 +20,24 @@ class AuthorTransformer extends TransformerAbstract
         return $translated;
     }
 
-    protected function translateServices($services)
-    {
-        $fields = ['title', 'desc'];
-        return $this->translateField($services, $fields);
-    }
-
-    protected function translateEducations($educations)
-    {
-        $fields = ['school', 'degree', 'desc'];
-        return $this->translateField($educations, $fields);
-    }
 
     public function transform(Author $author)
     {
         return [
-            'id' => (int) $author->id,
+            'id' => $author->id,
             'name' => $author->name,
             'job' => $author->job,
             'greeting' => $author->greeting,
             'introduction' => $author->introduction,
             'socialLinks' => $author->socialLinks,
-            'services' => $this->translateServices($author->services),
+            'services' => $this->translateFields($author->services, ['title', 'desc']),
             'location' => $author->location,
             'skills' => $author->skills,
-            'educations' => collect($this->translateEducations($author->educations))->sortByDesc(function ($education, $key) {
-                return (int) array_last(explode('-', $education['date']));
-            })->values(),
-            'experiences' => $author->experiences,
+            'educations' => collect($this->translateFields($author->educations, ['school', 'degree', 'desc']))
+                ->sortByDesc(function ($education, $key) {
+                    return (int) array_last(explode('-', $education['date']));
+                })->values(),
+            'experiences' => $this->translateFields($author->experiences, ['date', 'desc', 'name', 'position']),
         ];
     }
 }

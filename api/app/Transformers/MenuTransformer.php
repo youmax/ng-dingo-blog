@@ -10,7 +10,7 @@ class MenuTransformer extends TransformerAbstract
     public function transform(Menu $menu)
     {
         return [
-            'id' => (int) $menu->id,
+            'id' => $menu->id,
             'name' => $menu->name,
             'path' => $menu->path
         ];

@@ -38,14 +38,21 @@ class AuthorController extends Controller
     /**
      * Get Author by id
      *
+     * @param string $id
      * @return void
      */
     public function show(string $id)
     {
-        $author = Author::findOrFail((int) $id);
+        $author = Author::findOrFail($id);
         return $this->response->item($author, new AuthorTransformer);
     }
 
+    /**
+     * Get resume by author name
+     *
+     * @param string $name
+     * @return void
+     */
     public function resume(string $name)
     {
         return response()->download(storage_path('resume/'.$name.'.pdf'));

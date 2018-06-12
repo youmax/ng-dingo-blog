@@ -16,6 +16,7 @@ class CreateAuthorsTable extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->string('name');
+            $table->string('email');
             $table->json('job');
             $table->json('greeting');
             $table->json('introduction');
@@ -30,14 +31,19 @@ class CreateAuthorsTable extends Migration
 
         Author::create([
             'name' => 'Nick',
+            'email' => 'youmax210139@gmail.com',
             'job' => ['en' => 'PHP developer', 'cn' => 'PHP程序員'],
             'greeting' => [
-                'en' => 'Hi there, my name is Nick and I am making the web better again 1 site at a time. Have a look through my portfolio items see what I can do for you.',
-                'cn' => '你好，我的名字叫Nick。喜歡開發互聯網應用並改善功能，歡迎連繫我。',
+                'en' => 'Hi there, my name is Nick and I am good at web application and game development. Have a look through my portfolio items see what I can do for you.',
+                'cn' => '你好，我的名字叫Nick。擅長互聯網應用及游戲開發。歡迎瀏覽我的作品集，或連繫我取得幫助。',
             ],
             'introduction' => [
-                'en' => 'Hello! I’m Nick. PHP Developer with over 6 years of experience. Experienced with all stages of the development cycle for dynamic web projects. Having an in-depth knowledge including advanced HTML5, CSS3, JavaScript, jQuery, Angular2+, Laravel, PHP. Strong background in management and leadership.',
+                'en' => 'Hello! I’m Nick. PHP Developer with over 6 years of experience. Experienced with all stages of the development cycle for dynamic web projects. Having an in-depth knowledge including advanced CSS3, JavaScript, Angular2+, PHP. Strong background in management and leadership.',
                 'cn' => '你好，我叫Nick。有6年PHP開發經驗，有維護線上專案經驗。熟練使用Javascript，CSS，PHP，Angular2＋，有項目開發管理經驗。',
+            ],
+            'socialLinks' =>[
+                ['name'=>'Google+', 'url'=> 'https://plus.google.com/u/0/+shujiYuan', 'icon'=>'fa-google-plus'],
+                ['name'=>'Github', 'url'=> 'https://github.com/youmax', 'icon'=>'fa-github'],
             ],
             'services' => [
                 [
@@ -48,7 +54,7 @@ class CreateAuthorsTable extends Migration
                     ],
                     'desc' => [
                         'en' => 'I am a professional developer and system designer with many years of experience.',
-                        'cn' => '我是一個專業的開發者及系統設計員，有著多年的經驗。',
+                        'cn' => '系統設計及分析，有多年軟件開發經驗。',
                     ],
                 ],
                 [
@@ -59,7 +65,7 @@ class CreateAuthorsTable extends Migration
                     ],
                     'desc' => [
                         'en' => 'The primary target of my project is to satisfied my clients and improve the perceptions.',
-                        'cn' => '讓客戶滿意及提升使用者感受是我的首要目標。',
+                        'cn' => '以提升用戶滿意度及用戶體驗為首要目標。',
                     ],
                 ],
                 [
@@ -69,8 +75,8 @@ class CreateAuthorsTable extends Migration
                         'cn' => '游戲設計',
                     ],
                     'desc' => [
-                        'en' => 'I also enjoy design and developing some web game in my spare time with Phaser framwork.',
-                        'cn' => '我也喜歡在閑睱時間開發及設計網頁游戲。',
+                        'en' => 'I\'m good at design web game and pc game using Phaser and Unity.',
+                        'cn' => '擅長使用Phaser及Unity開發頁游及端游。',
                     ],
 
                 ],
@@ -161,8 +167,8 @@ class CreateAuthorsTable extends Migration
                         'cn' => "學士學位",
                     ],
                     "desc" => [
-                        'en' => "Major in Computer Science and successful completed all the credits.",
-                        'cn' => '主修軟件工程並完成所有學分。',
+                        'en' => "I was major in Computer Science and successful completed all the credits.Image Processing and Data Mining are the primary domains I studied for.",
+                        'cn' => '主修軟件工程並完成所有學分。學習影像處理，資料探勘等領域。',
                     ],
                 ],
                 [
