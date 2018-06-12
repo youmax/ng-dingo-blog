@@ -16,7 +16,9 @@ export class AuthorService extends BaseService {
 
   public get() {
     return this.http
-      .get<BaseModel<Author>>(this.baseUrl + "/authors/1")
+      .get<BaseModel<Author>>(
+        this.baseUrl + "/authors/5b1fc503c49c1bbc3e09b828"
+      )
       .pipe(catchError(this.handleError));
   }
 

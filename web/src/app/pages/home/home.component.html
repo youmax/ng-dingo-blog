@@ -3,12 +3,12 @@
     <img class="img-fluid" src="http://totaltheme.wpengine.com/james/wp-content/uploads/sites/73/2016/04/man.jpg" alt="">
   </figure>
   <div class="jumbotron text-center">
-    <h3>Welcome Stranger</h3>
+    <h3>{{ 'HOME.WELCOME' | translate }}</h3>
     <p class="lead">
       {{ GLOBALS.author.greeting }}
     </p>
     <p class="lead">
-      <a class="btn" role="button">Let’s Get Started</a>
+      <a href="mailto::{{ GLOBALS.author.email }}"class="btn" role="button">Let’s Get Started</a>
     </p>
   </div>
   <div class="row service">
