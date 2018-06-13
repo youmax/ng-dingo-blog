@@ -3,8 +3,12 @@ footer {
     background: #222;
     color: #999;
     font-size: 0.923em;
+    li{
+        padding:4px;
+    }
     a {
         color: #999;
+        cursor: pointer;
         &:hover {
             color: #fff;
             text-decoration: none;

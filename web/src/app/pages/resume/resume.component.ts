@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { GlobalService, AuthorService } from "@app/core";
 import { saveAs } from "file-saver/FileSaver";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-resume",
@@ -10,7 +11,8 @@ import { saveAs } from "file-saver/FileSaver";
 export class PageResumeComponent implements OnInit {
   constructor(
     private GLOBALS: GlobalService,
-    private authorService: AuthorService
+    private authorService: AuthorService,
+    public translate: TranslateService
   ) {}
 
   ngOnInit() {}

@@ -35,7 +35,7 @@ class CreateAuthorsTable extends Migration
             'job' => ['en' => 'PHP developer', 'cn' => 'PHP程序員'],
             'greeting' => [
                 'en' => 'Hi there, my name is Nick and I am good at web application and game development. Have a look through my portfolio items see what I can do for you.',
-                'cn' => '你好，我的名字叫Nick。擅長互聯網應用及游戲開發。歡迎瀏覽我的作品集，或連繫我取得幫助。',
+                'cn' => '你好，我的名字叫Nick。擅長互聯網應用及游戲開發。歡迎瀏覽我的作品集，或聯繫我取得更多幫助。',
             ],
             'introduction' => [
                 'en' => 'Hello! I’m Nick. PHP Developer with over 6 years of experience. Experienced with all stages of the development cycle for dynamic web projects. Having an in-depth knowledge including advanced CSS3, JavaScript, Angular2+, PHP. Strong background in management and leadership.',
@@ -203,7 +203,8 @@ class CreateAuthorsTable extends Migration
                     ],
                     "desc" => [
                         'en' => "",
-                        'cn' => '官網開發，管理者主控介面開發，後端API服務開發',
+                        'cn' => '游戲官網開發，用戶登入及註冊。
+                                 游戲後端API開發',
                     ],
                 ],
                 [

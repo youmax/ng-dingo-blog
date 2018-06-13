@@ -1,10 +1,10 @@
-<app-title name="Resume"></app-title>
+<app-title name="RESUME.TITLE"></app-title>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-9" id="resume">
       <div class="card introduction">
         <div class="card-body">
-          <h5 class="card-title">Hello, I'm {{ GLOBALS.author.name }}</h5>
+          <h5 class="card-title">{{ GLOBALS.author.name }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{ GLOBALS.author.job }}</h6>
           <p class="card-text">{{ GLOBALS.author.introduction }}</p>
           <a href="{{ link.url }}" *ngFor="let link of GLOBALS.author.socialLinks" target="_blank">
@@ -12,16 +12,16 @@
           </a>
         </div>
         <div class="card-footer text-center">
-          <a class="btn btn-download" (click)="download()">Download PDF</a>
+          <a class="btn btn-download" (click)="download()">{{ 'RESUME.DOWNLOAD' | translate }} PDF</a>
         </div>
       </div>
 
-      <h3 class="title-skills"> Skills </h3>
+      <h3 class="title-skills">{{ 'RESUME.SKILLS' | translate }} </h3>
       <div class="row skills">
 
         <div class="col-lg-5">
           <div class="card">
-            <header>Profession Skills</header>
+            <header>{{ 'RESUME.PROFESSION_SKILLS' | translate }}</header>
             <div class="card-body">
               <div *ngFor="let skill of GLOBALS.author.skills.slice(0,5)">
                 <h6 class="card-subtitle mb-2 text-muted">
@@ -38,7 +38,7 @@
 
         <div class="col-lg-7">
           <div class="card">
-            <header>Additional Skills</header>
+            <header>{{ 'RESUME.ADDITIONAL_SKILLS' | translate }}</header>
             <div class="card-body">
               <div class="row">
                 <div class="col-4" *ngFor="let skill of GLOBALS.author.skills.slice(5,8)">
@@ -65,7 +65,7 @@
         </div>
       </div>
 
-      <h3> education </h3>
+      <h3> {{ 'RESUME.EDUCATION' | translate }} </h3>
       <div class="card-deck">
         <div class="card" *ngFor="let education of GLOBALS.author.educations">
           <header>{{ education.date }}</header>
@@ -77,7 +77,7 @@
         </div>
       </div>
 
-      <h3> experience </h3>
+      <h3> {{ 'RESUME.EDUCATION' | translate }} </h3>
       <div class="row experience">
         <div class="offset-lg-4 col-md-12 col-lg-8 ex-container">
           <div class="card" *ngFor="let experience of GLOBALS.author.experiences">

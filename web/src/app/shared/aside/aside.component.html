@@ -1,7 +1,7 @@
 <aside itemscope="itemscope" itemtype="http://schema.org/Person">
   <div class="container-fluid">
     <div class="row about-me">
-      <h5 class="title">About Me</h5>
+      <h5 class="title">{{ 'ASIDE.ABOUT_ME' | translate }}</h5>
       <img src="http://totaltheme.wpengine.com/boxed-folio/wp-content/uploads/sites/73/2016/04/man.jpg" alt="About Me">
       <p class="description">
         {{ GLOBALS.author.greeting }}
@@ -9,8 +9,8 @@
     </div>
 
     <div class="row follow-me">
-      <h5 class="title">Follow Me</h5>
-      <p class="description">Don't forget to follow me via my various social media accounts.</p>
+      <h5 class="title">{{ 'ASIDE.FOLLOW_ME' | translate }}</h5> 
+      <p class="description">{{ 'ASIDE.FOLLOW_DESC' | translate }}</p>
       <ul>
         <li>
           <a href="{{ link.url }}" target="_blank" *ngFor="let link of GLOBALS.author.socialLinks">
@@ -84,7 +84,7 @@
     </div>
 
     <div class="row recent-posts">
-      <h5 class="title">Recent Posts</h5>
+      <h5 class="title">{{ 'ASIDE.RECENT_POSTS' | translate }}</h5>
       <div class="col-12">
         <div class="row">
           <div class="col-auto">

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { TitleModule, AsideModule } from "@app/shared";
 import { NgCircleProgressModule } from "ng-circle-progress";
+import { TranslateModule } from "@ngx-translate/core";
 
 import { PageResumeComponent } from "./resume.component";
 
@@ -14,6 +15,7 @@ const routes: Routes = [{ path: "", component: PageResumeComponent }];
     CommonModule,
     TitleModule,
     AsideModule,
+    TranslateModule.forChild(),
     RouterModule.forChild(routes),
     NgCircleProgressModule.forRoot()
   ],

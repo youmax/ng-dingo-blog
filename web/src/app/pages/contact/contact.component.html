@@ -1,32 +1,30 @@
-<app-title name="Contact"></app-title>
+<app-title name="CONTACT.TITLE"></app-title>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-9">
-      <h4>Contact me for a quote</h4>
-      <p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-        elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-      </p>
+      <h4>{{ 'CONTACT.SUBTITLE' | translate }}</h4>
+      <p>{{ 'CONTACT.DESC' | translate }}</p>
       <form>
-          <div class="form-group">
-            <label>Your Name (required)</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter name">
-            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label >Your Email (required)</label>
-            <input type="email" class="form-control" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-            <label>Your Message</label>
-            <textarea class="form-control" rows="10" cols="40"></textarea>
-          </div>
-          <button type="submit" class="btn">Submit Form</button>
-        </form>
-        <agm-map [latitude]="GLOBALS.author.location.latitude" [longitude]="GLOBALS.author.location.longitude" [zoom]="10">
-          <agm-marker [latitude]="GLOBALS.author.location.latitude" [longitude]="GLOBALS.author.location.longitude">
-            <agm-info-window>Home</agm-info-window>
-          </agm-marker>
-        </agm-map>
+        <div class="form-group">
+          <label>{{ 'CONTACT.NAME' | translate }}</label>
+          <input type="text" class="form-control" placeholder="{{'CONTACT.NAME_PLACEHOLDER' | translate}}">
+        </div>
+        <div class="form-group">
+          <label>{{ 'CONTACT.EMAIL' | translate }}</label>
+          <input type="email" class="form-control" placeholder="{{'CONTACT.EMAIL_PLACEHOLDER' | translate}}" aria-describedby="emailHelp" >
+          <small class="form-text text-muted">{{ 'CONTACT.EMAIL_TIP' | translate }}</small>
+        </div>
+        <div class="form-group">
+          <label>{{ 'CONTACT.MESSAGE' | translate }}</label>
+          <textarea class="form-control" rows="10" cols="40"></textarea>
+        </div>
+        <button type="submit" class="btn">{{ 'CONTACT.SUBMIT' | translate }}</button>
+      </form>
+      <agm-map [latitude]="GLOBALS.author.location.latitude" [longitude]="GLOBALS.author.location.longitude" [zoom]="10">
+        <agm-marker [latitude]="GLOBALS.author.location.latitude" [longitude]="GLOBALS.author.location.longitude">
+          <agm-info-window>Home</agm-info-window>
+        </agm-marker>
+      </agm-map>
     </div>
     <div class="col-md-3">
       <app-aside></app-aside>

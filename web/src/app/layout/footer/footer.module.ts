@@ -1,16 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FooterComponent } from './footer.component';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { TranslateModule } from "@ngx-translate/core";
+
+import { FooterComponent } from "./footer.component";
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    FooterComponent
-  ],
-  declarations: [
-    FooterComponent
-  ]
+  imports: [CommonModule, TranslateModule.forChild()],
+  exports: [FooterComponent],
+  declarations: [FooterComponent]
 })
-export class FooterModule { }
+export class FooterModule {}

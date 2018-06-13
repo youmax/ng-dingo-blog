@@ -32,8 +32,10 @@ class AuthorController extends Controller
      */
     public function index(Request $request)
     {
-        $authors = Author::paginate(1);
-        return $this->response->paginator($authors, new AuthorTransformer);
+        //$authors = Author::paginate(1);
+        //return $this->response->paginator($authors, new AuthorTransformer);
+        $author = Author::firstOrFail();
+        return $this->response->item($author, new AuthorTransformer);
     }
     /**
      * Get Author by id

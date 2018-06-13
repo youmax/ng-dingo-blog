@@ -1,16 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AsideComponent } from './aside.component';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { TranslateModule } from "@ngx-translate/core";
+
+import { AsideComponent } from "./aside.component";
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    AsideComponent
-  ],
-  declarations: [
-    AsideComponent
-  ]
+  imports: [CommonModule, TranslateModule.forChild()],
+  exports: [AsideComponent],
+  declarations: [AsideComponent]
 })
-export class AsideModule { }
+export class AsideModule {}
