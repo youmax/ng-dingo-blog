@@ -6,10 +6,17 @@ footer {
     li{
         padding:4px;
     }
-    a {
-        color: #999;
+    .nav-item a {
+        color: #ddd;
         cursor: pointer;
+        &.active,
         &:hover {
+            color: #5ac1ae
+        }
+    }
+    a{
+        color: #999;
+        &:hover{
             color: #fff;
             text-decoration: none;
         }

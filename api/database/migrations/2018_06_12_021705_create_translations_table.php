@@ -20,6 +20,10 @@ class CreateTranslationsTable extends Migration
             $table->timestamps();
         });
         Translation::create(['name' => 'en', 'data' => [
+            "FOOTER"=>[
+                "EN"=>"English",
+                "CN"=>"Chinese"
+            ],
             "ASIDE" => [
                 "ABOUT_ME" => "about me",
                 "FOLLOW_ME" => "follow me",
@@ -29,6 +33,8 @@ class CreateTranslationsTable extends Migration
             "HOME" => [
                 "WELCOME" => "Welcome Stranger",
                 "START" => "Let's get started",
+                "RECENT" => "Recent Works",
+                "RECENT_DESC" => 'Check our some of my latest and best work.'
             ],
             "RESUME" => [
                 "TITLE" => "My resume",
@@ -59,6 +65,10 @@ class CreateTranslationsTable extends Migration
             ],
         ]]);
         Translation::create(['name' => 'cn', 'data' => [
+            "FOOTER"=>[
+                "EN"=>"English",
+                "CN"=>"中文"
+            ],
             "ASIDE" => [
                 "ABOUT_ME" => "關於我",
                 "FOLLOW_ME" => "關注我",
@@ -68,6 +78,8 @@ class CreateTranslationsTable extends Migration
             "HOME" => [
                 "WELCOME" => "歡迎，訪客",
                 "START" => "立即開始",
+                "RECENT" => "最近作品",
+                "RECENT_DESC" => '最新線上的作品。'
             ],
             "RESUME" => [
                 "TITLE" => "簡歷",

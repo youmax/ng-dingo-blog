@@ -11,8 +11,6 @@ export class AppComponent implements OnInit {
   title = "app";
 
   constructor(translate: TranslateService) {
-    translate.setDefaultLang("cn");
-    translate.use("cn");
   }
   ngOnInit() {
     $(document).ready(function() {

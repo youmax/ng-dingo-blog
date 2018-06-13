@@ -6,10 +6,21 @@ import { TranslateService } from "@ngx-translate/core";
   styleUrls: ["./footer.component.scss"]
 })
 export class FooterComponent implements OnInit {
-  constructor(public translate: TranslateService) {}
+  constructor(public translate: TranslateService) {
+    translate.addLangs(["en", "cn"]);
+    translate.setDefaultLang("cn");
+    translate.use("cn");
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
+  getLangName(lang: string) {
+    return "FOOTER." + lang.toUpperCase();
+  }
+  isCurrent(lang: string): boolean {
+    return this.translate.currentLang === lang;
+  }
   setLang(lang: string) {
     this.translate.use(lang);
   }

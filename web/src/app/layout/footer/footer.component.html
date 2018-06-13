@@ -1,8 +1,9 @@
 <footer class="text-center">
     <ul class="nav justify-content-center">
-        <li class="nav-item"><a (click)="setLang('en')">English</a></li>
-        <li class="nav-item"><a (click)="setLang('cn')">中文</a></li>
+        <li class="nav-item" *ngFor="let lang of translate.getLangs()">
+            <a class="" [ngClass]="isCurrent(lang)?'active':''" (click)="setLang(lang)">{{ getLangName(lang) | translate }}</a>
+        </li>
     </ul>
-    Copyright <a href="http://totaltheme.wpengine.com/james/portfolio/" target="_blank">Total WordPress Theme.</a>
+    Copyright
+    <a href="http://totaltheme.wpengine.com/james/portfolio/" target="_blank">Total WordPress Theme.</a>
 </footer>
-    
