@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+
 import {
   HttpEvent,
   HttpInterceptor,
@@ -15,8 +16,11 @@ export class DingoHttpInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const authReq = req.clone({
-      headers: req.headers.set("Accept", "application/vnd.blog.v1+json")
+      headers: req.headers
+        .set("Accept", "application/vnd.blog.v1+json")
+        .append("Accept-Language", localStorage.getItem("lang"))
     });
+    console.log(authReq);
     return next.handle(authReq);
   }
 }

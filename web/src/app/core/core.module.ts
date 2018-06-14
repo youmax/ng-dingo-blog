@@ -1,6 +1,7 @@
 import { NgModule, Optional, SkipSelf } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
+import { TranslateModule } from "@ngx-translate/core";
 
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { DingoHttpInterceptor } from "./services/dingo.interceptor";
@@ -10,7 +11,7 @@ import { MenuService } from "./services/menu/menu.service";
 import { GlobalService } from "./services/global/global.service";
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, TranslateModule.forChild()],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

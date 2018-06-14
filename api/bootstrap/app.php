@@ -63,6 +63,7 @@ $app->singleton(
 
 $app->middleware([
     Spatie\Cors\Cors::class,
+    App\Http\Middleware\Localization::class
 ]);
 
 // $app->routeMiddleware([

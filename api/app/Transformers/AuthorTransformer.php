@@ -13,7 +13,7 @@ class AuthorTransformer extends TransformerAbstract
         $translated = [];
         foreach ($values as $value) {
             foreach ($fields as $field) {
-                $value[$field] = $value[$field][env('APP_LOCALE')] ?? '';
+                $value[$field] = $value[$field][config('app.locale')] ?? '';
             }
             $translated[] = $value;
         }

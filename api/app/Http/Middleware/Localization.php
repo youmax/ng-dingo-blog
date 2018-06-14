@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class ExampleMiddleware
+class Localization
 {
     /**
      * Handle an incoming request.
@@ -15,6 +15,9 @@ class ExampleMiddleware
      */
     public function handle($request, Closure $next)
     {
+        $locale = ($request->hasHeader('Accept-Language'))
+            ? $request->header('Accept-Language') : config('translatable.fallback_locale');
+        config(['app.locale' => $locale]);
         return $next($request);
     }
 }
