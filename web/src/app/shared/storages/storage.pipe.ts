@@ -6,12 +6,15 @@ function isDefined(value: any): boolean {
 }
 
 @Pipe({
-  name: "storage"
+  name: "storage",
+  pure: false
 })
 export class StoragePipe implements PipeTransform {
   constructor(
     protected global: GlobalStorage
-  ) {}
+  ) {
+
+  }
   transform(query: any, ...args: any[]): any {
     if (!query || query.length === 0) {
       return query;
@@ -39,7 +42,6 @@ export class StoragePipe implements PipeTransform {
         key += ".";
       }
     } while (keys.length);
-    console.log(target);
     return target;
   }
 }

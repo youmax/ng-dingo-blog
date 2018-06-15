@@ -3,8 +3,6 @@ import { environment } from "@env/environment";
 import { AuthorService, Author, MenuService, Menu } from "@app/core";
 import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
 import { forkJoin } from "rxjs/observable/forkJoin";
-import { empty } from "rxjs/observable/empty";
-import { Observable, of } from "rxjs";
 
 @Injectable()
 export class GlobalStorage {
@@ -22,7 +20,7 @@ export class GlobalStorage {
   constructor(
     protected authorService: AuthorService,
     protected translates: TranslateService,
-    protected menuService: MenuService
+    protected menuService: MenuService,
   ) {
     const defaultLang = environment.APP_LOCALE || "en";
     if (!localStorage.getItem("lang")) {
@@ -37,7 +35,6 @@ export class GlobalStorage {
         results => {
           this._menus = results[0].data as Menu[];
           this._author = results[1].data as Author;
-          console.log(this._menus, this._author);
         }
       );
     });

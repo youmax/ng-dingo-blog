@@ -11,7 +11,8 @@ export class FooterComponent implements OnInit {
     public translate: TranslateService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   getLangName(lang: string) {
     return "FOOTER." + lang.toUpperCase();

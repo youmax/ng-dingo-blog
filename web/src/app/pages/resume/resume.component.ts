@@ -16,7 +16,7 @@ export class PageResumeComponent implements OnInit {
 
   ngOnInit() {}
 
-  get professionSkills(){
+  get professionSkills() {
     return this.storage.author.skills.slice(0, 5);
   }
 
