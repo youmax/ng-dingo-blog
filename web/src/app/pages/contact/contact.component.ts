@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { GlobalService } from "@app/core";
 
 @Component({
   selector: "app-contact",
@@ -7,7 +6,7 @@ import { GlobalService } from "@app/core";
   styleUrls: ["./contact.component.scss"]
 })
 export class PageContactComponent implements OnInit {
-  constructor(private GLOBALS: GlobalService) {}
+  constructor() {}
 
   ngOnInit() {
   }

@@ -1,9 +1,9 @@
 <header>
   <nav class="navbar box-shadow" id="navbarToggleExternalContent">
     <div class="brand-wrapper">
-      <a class="navbar-brand" routerLink="/" *ngIf="GLOBALS.author">
-        <span class="name">{{ GLOBALS.author.name }}</span>
-        <span class="position">{{ GLOBALS.author.job }}</span>
+      <a class="navbar-brand" routerLink="/">
+        <span class="name">{{ 'author.name' | storage }}</span>
+        <span class="position">{{ 'author.job' | storage }}</span>
       </a>
       <a class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarToggleExternalContent"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +12,7 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="nav">
-        <li class="nav-item" [routerLinkActive]="['']" *ngFor="let menu of GLOBALS.menus" #router="routerLinkActive">
+        <li class="nav-item" [routerLinkActive]="['']" *ngFor="let menu of ('menus'|storage)" #router="routerLinkActive">
           <a class="nav-link" [ngClass]="router.isActive?'active':''" [routerLink]="[menu.path]">{{ menu.name }}</a>
         </li>
       </ul>

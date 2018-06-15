@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { GlobalService, AuthorService } from "@app/core";
+import { AuthorService } from "@app/core";
+import { GlobalStorage } from "@app/shared";
 import { saveAs } from "file-saver/FileSaver";
 
 @Component({
@@ -9,17 +10,29 @@ import { saveAs } from "file-saver/FileSaver";
 })
 export class PageResumeComponent implements OnInit {
   constructor(
-    private GLOBALS: GlobalService,
+    private storage: GlobalStorage,
     private authorService: AuthorService
   ) {}
 
   ngOnInit() {}
 
+  get professionSkills(){
+    return this.storage.author.skills.slice(0, 5);
+  }
+
+  get teamWorkSkills() {
+    return this.storage.author.skills.slice(5, 8);
+  }
+
+  get additionalSkills() {
+    return this.storage.author.skills.slice(8, 14);
+  }
+
   protected download() {
     this.authorService
-      .download(this.GLOBALS.author.name)
+      .download(this.storage.author.name)
       .subscribe(response => {
-        saveAs(response, this.GLOBALS.author.name + ".pdf");
+        saveAs(response, this.storage.author.name + ".pdf");
       });
   }
 }

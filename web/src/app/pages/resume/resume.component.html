@@ -4,10 +4,10 @@
     <div class="col-md-9" id="resume">
       <div class="card introduction">
         <div class="card-body">
-          <h5 class="card-title">{{ GLOBALS.author.name }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ GLOBALS.author.job }}</h6>
-          <p class="card-text">{{ GLOBALS.author.introduction }}</p>
-          <a href="{{ link.url }}" *ngFor="let link of GLOBALS.author.socialLinks" target="_blank">
+          <h5 class="card-title">{{ 'author.name' | storage }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ 'author.job' | storage }}</h6>
+          <p class="card-text">{{ 'author.introduction' | storage }}</p>
+          <a href="{{ link.url }}" *ngFor="let link of ('author.socialLinks'|storage)" target="_blank">
             <span class="fa {{ link.icon }} mr-1"></span>
           </a>
         </div>
@@ -23,7 +23,7 @@
           <div class="card">
             <header>{{ 'RESUME.PROFESSION_SKILLS' | translate }}</header>
             <div class="card-body">
-              <div *ngFor="let skill of GLOBALS.author.skills.slice(0,5)">
+              <div *ngFor="let skill of professionSkills">
                 <h6 class="card-subtitle mb-2 text-muted">
                   {{ skill.name }}
                   <span>{{ skill.percent }}%</span>
@@ -41,13 +41,13 @@
             <header>{{ 'RESUME.ADDITIONAL_SKILLS' | translate }}</header>
             <div class="card-body">
               <div class="row">
-                <div class="col-4" *ngFor="let skill of GLOBALS.author.skills.slice(5,8)">
+                <div class="col-4" *ngFor="let skill of teamWorkSkills">
                   <circle-progress [percent]="skill.percent" [radius]="40" [outerStrokeWidth]="10" [innerStrokeWidth]="0" [outerStrokeColor]="'#4882c2'"
                     [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300" [responsive]="true" [subtitle]="skill.name"></circle-progress>
                 </div>
                 <div class="col checkbox-group">
                   <div class="row">
-                    <div class="col-6" *ngFor="let skill of GLOBALS.author.skills.slice(8,14)">
+                    <div class="col-6" *ngFor="let skill of additionalSkills">
                       <div class="form-check">
                         <i class="fa fa-check-square-o" aria-hidden="true"></i>
                         <label class="form-check-label" for="gridCheck">
@@ -67,7 +67,7 @@
 
       <h3> {{ 'RESUME.EDUCATION' | translate }} </h3>
       <div class="card-deck">
-        <div class="card" *ngFor="let education of GLOBALS.author.educations">
+        <div class="card" *ngFor="let education of ('author.educations'|storage)">
           <header>{{ education.date }}</header>
           <div class="card-body">
             <h6 class="card-subtitle mb-2 text-muted"> {{ education.school }}</h6>
@@ -80,7 +80,7 @@
       <h3> {{ 'RESUME.EDUCATION' | translate }} </h3>
       <div class="row experience">
         <div class="offset-lg-4 col-md-12 col-lg-8 ex-container">
-          <div class="card" *ngFor="let experience of GLOBALS.author.experiences">
+          <div class="card" *ngFor="let experience of ('author.experiences'|storage)">
             <time>{{ experience.date }}</time>
             <div class="card-body">
               <h5 class="card-title">{{ experience.name }}</h5>

@@ -1,18 +1,18 @@
-<div *ngIf="GLOBALS.author">
+<div>
   <figure>
     <img class="img-fluid" src="http://totaltheme.wpengine.com/james/wp-content/uploads/sites/73/2016/04/man.jpg" alt="">
   </figure>
   <div class="jumbotron text-center">
     <h3>{{ 'HOME.WELCOME' | translate }}</h3>
     <p class="lead">
-      {{ GLOBALS.author.greeting }}
+      {{ 'author.greeting' | storage }}
     </p>
     <p class="lead">
-      <a href="mailto::{{ GLOBALS.author.email }}"class="btn" role="button">{{ 'HOME.START' | translate }}</a>
+      <a href="mailto::{{ 'author.email' | storage }}"class="btn" role="button">{{ 'HOME.START' | translate }}</a>
     </p>
   </div>
   <div class="row service">
-    <div class="col-md-3 text-center" *ngFor="let service of GLOBALS.author.services">
+    <div class="col-md-3 text-center" *ngFor="let service of ('author.services'| storage)">
       <span class="fa {{ service.icon }}" aria-hidden="true"></span>
       <h5>{{ service.title }}</h5>
       <p>

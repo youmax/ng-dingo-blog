@@ -203,8 +203,8 @@ class CreateAuthorsTable extends Migration
                     ],
                     "desc" => [
                         'en' => "",
-                        'cn' => '游戲官網開發，用戶登入及註冊。
-                                 游戲後端API開發',
+                        'cn' => '游戲官網開發。
+                                 游戲API開發',
                     ],
                 ],
                 [
@@ -222,7 +222,7 @@ class CreateAuthorsTable extends Migration
                     ],
                     "desc" => [
                         'en' => ".",
-                        'cn' => '官網開發，管理者主控介面開發，後端API服務開發',
+                        'cn' => '官網開發，後台管理介面開發，後端API服務開發',
                     ],
                 ],
             ],

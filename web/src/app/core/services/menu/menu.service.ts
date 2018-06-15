@@ -18,6 +18,6 @@ export class MenuService extends BaseService {
 
   public get() {
     return this.http
-      .get<BaseModel<Menu>>(this.baseUrl + "/menus");
+      .get<BaseModel<Menu[]>>(this.baseUrl + "/menus");
   }
 }

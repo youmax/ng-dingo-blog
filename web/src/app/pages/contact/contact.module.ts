@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 import { AgmCoreModule } from "@agm/core";
-import { TitleModule, AsideModule } from "@app/shared";
+import { TitleModule, AsideModule, StorageModule } from "@app/shared";
 import { TranslateModule } from "@ngx-translate/core";
 
 import { PageContactComponent } from "./contact.component";
@@ -14,6 +14,7 @@ const routes: Routes = [{ path: "", component: PageContactComponent }];
     CommonModule,
     TitleModule,
     AsideModule,
+    StorageModule,
     TranslateModule.forChild(),
     RouterModule.forChild(routes),
     AgmCoreModule.forRoot({

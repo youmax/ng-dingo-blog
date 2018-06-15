@@ -20,8 +20,8 @@
         </div>
         <button type="submit" class="btn">{{ 'CONTACT.SUBMIT' | translate }}</button>
       </form>
-      <agm-map [latitude]="GLOBALS.author.location.latitude" [longitude]="GLOBALS.author.location.longitude" [zoom]="10">
-        <agm-marker [latitude]="GLOBALS.author.location.latitude" [longitude]="GLOBALS.author.location.longitude">
+      <agm-map [latitude]="'author.location.latitude' | storage" [longitude]="'author.location.longitude'|storage" [zoom]="10">
+        <agm-marker [latitude]="'author.location.latitude'|storage" [longitude]="'author.location.longitude'|storage">
           <agm-info-window>Home</agm-info-window>
         </agm-marker>
       </agm-map>

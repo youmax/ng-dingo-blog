@@ -1,5 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { NgModule, APP_INITIALIZER } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { CoreModule } from "@app/core";
@@ -8,11 +8,16 @@ import { AppRoutingModule } from "@app/route";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 
 import { TranslateHttpLoader } from "@app/core";
+import { StorageModule, GlobalStorage } from "@app/shared";
 import { AppComponent } from "./app.component";
 import { HttpClient } from "@angular/common/http";
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
+}
+
+export function StorageFactory(gs: GlobalStorage) {
+  return () => gs.load();
 }
 
 @NgModule({
@@ -26,12 +31,20 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    CoreModule,
+    CoreModule.forRoot(),
+    StorageModule.forRoot(),
     LayoutModule,
     AppRoutingModule
   ],
   declarations: [AppComponent],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: StorageFactory,
+      deps: [GlobalStorage],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

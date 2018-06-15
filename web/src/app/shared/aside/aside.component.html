@@ -4,7 +4,7 @@
       <h5 class="title">{{ 'ASIDE.ABOUT_ME' | translate }}</h5>
       <img src="http://totaltheme.wpengine.com/boxed-folio/wp-content/uploads/sites/73/2016/04/man.jpg" alt="About Me">
       <p class="description">
-        {{ GLOBALS.author.greeting }}
+        {{ 'author.greeting' | storage }}
       </p>
     </div>
 
@@ -13,7 +13,7 @@
       <p class="description">{{ 'ASIDE.FOLLOW_DESC' | translate }}</p>
       <ul>
         <li>
-          <a href="{{ link.url }}" target="_blank" *ngFor="let link of GLOBALS.author.socialLinks">
+          <a href="{{ link.url }}" target="_blank" *ngFor="let link of ('author.socialLinks'|storage)">
             <span class="fa {{ link.icon }} mr-1" aria-hidden="true"></span>
           </a>
         </li>

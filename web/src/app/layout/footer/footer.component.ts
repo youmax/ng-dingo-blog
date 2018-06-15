@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
-import { GlobalService } from "@app/core";
 
 @Component({
   selector: "app-footer",
@@ -9,8 +8,7 @@ import { GlobalService } from "@app/core";
 })
 export class FooterComponent implements OnInit {
   constructor(
-    public translate: TranslateService,
-    protected global: GlobalService
+    public translate: TranslateService
   ) {}
 
   ngOnInit() {}

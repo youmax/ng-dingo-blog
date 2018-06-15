@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { GlobalService } from "@app/core";
 
 @Component({
   selector: "app-aside",
@@ -7,9 +6,7 @@ import { GlobalService } from "@app/core";
   styleUrls: ["./aside.component.scss"]
 })
 export class AsideComponent implements OnInit {
-  constructor(
-    private GLOBALS: GlobalService
-  ) {}
+  constructor() {}
 
   ngOnInit() {}
 }

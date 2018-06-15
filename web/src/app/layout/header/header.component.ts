@@ -1,6 +1,5 @@
 import { Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
-import { GlobalService } from "@app/core";
 
 @Component({
   selector: "app-header",
@@ -10,8 +9,7 @@ import { GlobalService } from "@app/core";
 export class HeaderComponent implements OnInit {
 
   constructor(
-    private router: Router,
-    private GLOBALS: GlobalService
+    private router: Router
   ) {}
 
   ngOnInit() {

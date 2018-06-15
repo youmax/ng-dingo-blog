@@ -1,4 +1,4 @@
-import { NgModule, Optional, SkipSelf } from "@angular/core";
+import { NgModule, Optional, SkipSelf} from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { TranslateModule } from "@ngx-translate/core";
@@ -20,10 +20,9 @@ import {
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,
-      multi: true,
+      multi: true
     }
-  ],
-  declarations: []
+  ]
 })
 export class CoreModule {
   constructor(
@@ -34,5 +33,11 @@ export class CoreModule {
     if (core) {
       throw new Error("core module can only inject in app module once");
     }
+  }
+  static forRoot() {
+    return {
+      ngModule: CoreModule,
+      providers: []
+    };
   }
 }

@@ -1,17 +1,17 @@
 import { TestBed, inject } from "@angular/core/testing";
 
-import { GlobalService } from "./global.storage";
+import { GlobalStorage } from "./global.storage";
 
-describe("GlobalService", () => {
+describe("GlobalStorage", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GlobalService]
+      providers: [GlobalStorage]
     });
   });
 
   it(
     "should be created",
-    inject([GlobalService], (service: GlobalService) => {
+    inject([GlobalStorage], (service: GlobalStorage) => {
       expect(service).toBeTruthy();
     })
   );
