@@ -1,4 +1,5 @@
 export const environment = {
-  apiUrl: "http://api.desuga.me",
+  API_URI: "http://api.desuga.me",
+  APP_LOCALE: "cn",
   production: true
 };

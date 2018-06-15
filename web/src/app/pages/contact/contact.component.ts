@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { GlobalService } from "@app/core";
-import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-contact",
@@ -8,8 +7,7 @@ import { TranslateService } from "@ngx-translate/core";
   styleUrls: ["./contact.component.scss"]
 })
 export class PageContactComponent implements OnInit {
-  constructor(private GLOBALS: GlobalService,
-    public translate: TranslateService) {}
+  constructor(private GLOBALS: GlobalService) {}
 
   ngOnInit() {
   }

@@ -4,6 +4,6 @@ export abstract class BaseService {
   constructor() {}
 
   get baseUrl(): string {
-    return environment.apiUrl;
+    return environment.API_URI;
   }
 }

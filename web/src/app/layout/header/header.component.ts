@@ -1,6 +1,5 @@
 import { Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
-import { Menu, MenuService } from "@app/core";
 import { GlobalService } from "@app/core";
 
 @Component({
@@ -9,18 +8,12 @@ import { GlobalService } from "@app/core";
   styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-  menus: Menu[];
 
   constructor(
     private router: Router,
-    private menuService: MenuService,
     private GLOBALS: GlobalService
   ) {}
 
   ngOnInit() {
-    this.menuService.get().subscribe(menus => {
-      const data = menus.data as Menu[];
-      this.menus = data;
-    });
   }
 }

@@ -14,7 +14,7 @@ export class TranslateHttpLoader implements TranslateLoader {
 
   getTranslation(lang: string): Observable<Object> {
     return this.http
-      .get<BaseModel<Object>>(`${environment.apiUrl}/trans/${lang}`)
+      .get<BaseModel<Object>>(`${environment.API_URI}/trans/${lang}`)
       .pipe(map(data => data.data));
   }
 }

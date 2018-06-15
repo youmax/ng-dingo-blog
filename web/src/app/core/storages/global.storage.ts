@@ -1,7 +1,11 @@
 import { Injectable } from "@angular/core";
+import { environment } from "@env/environment";
+
 import { AuthorService } from "../services/author/author.service";
 import { Author } from "../services/author/author.model";
-import { TranslateService } from "@ngx-translate/core";
+import { MenuService } from "../services/menu/menu.service";
+import { Menu } from "../services/menu/menu.model";
+import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
 
 import { CoreModule } from "../core.module";
 
@@ -9,26 +13,49 @@ import { CoreModule } from "../core.module";
   providedIn: CoreModule
 })
 export class GlobalService {
-  public author: Author;
+  protected _author: Author;
+  protected _menus: Menu[];
+  get author() {
+    return this._author;
+  }
+  get menus() {
+    return this._menus;
+  }
 
   constructor(
-    private authorService: AuthorService,
-    protected translate: TranslateService
+    protected authorService: AuthorService,
+    protected translates: TranslateService,
+    protected menuService: MenuService
   ) {
-    if (!localStorage.getItem("lang")) {
-      localStorage.setItem("lang", "cn");
-    }
+    this.initLanguage();
+  }
 
-    this.translate.addLangs(["en", "cn"]);
-    this.translate.setDefaultLang("cn");
-    this.translate.use(localStorage.getItem("lang"));
-    this.refreshAuthor();
+  protected initLanguage() {
+    const defaultLang = environment.APP_LOCALE || "en";
+    if (!localStorage.getItem("lang")) {
+      localStorage.setItem("lang", defaultLang);
+    }
+    this.translates.onLangChange.subscribe((event: LangChangeEvent) => {
+      localStorage.setItem("lang", event.lang);
+      this.refreshAuthor();
+      this.refreshMenus();
+    });
+    this.translates.addLangs(["en", "cn"]);
+    this.translates.setDefaultLang(defaultLang);
+    this.translates.use(localStorage.getItem("lang"));
   }
 
   public refreshAuthor() {
     this.authorService.get().subscribe(author => {
       const data = author.data as Author;
-      this.author = data;
+      this._author = data;
+    });
+  }
+
+  public refreshMenus() {
+    this.menuService.get().subscribe(menus => {
+      const data = menus.data as Menu[];
+      this._menus = data;
     });
   }
 }

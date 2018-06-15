@@ -1,6 +1,6 @@
 import { TestBed, inject } from "@angular/core/testing";
 
-import { GlobalService } from "./global.service";
+import { GlobalService } from "./global.storage";
 
 describe("GlobalService", () => {
   beforeEach(() => {

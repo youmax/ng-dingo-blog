@@ -22,8 +22,6 @@ export class FooterComponent implements OnInit {
     return this.translate.currentLang === lang;
   }
   setLang(lang: string) {
-    localStorage.setItem("lang", lang);
     this.translate.use(lang);
-    this.global.refreshAuthor();
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { TranslateService } from "@ngx-translate/core";
 declare const $: any;
 
 @Component({
@@ -10,7 +9,7 @@ declare const $: any;
 export class AppComponent implements OnInit {
   title = "app";
 
-  constructor(translate: TranslateService) {
+  constructor() {
   }
   ngOnInit() {
     $(document).ready(function() {
