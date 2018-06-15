@@ -1,13 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { BaseService } from "../base.service";
-import { catchError, retry } from "rxjs/operators";
 
 import { BaseModel } from "../base.model";
 import { Author } from "./author.model";
 
+import { CoreModule } from "../../core.module";
+
 @Injectable({
-  providedIn: "root"
+  providedIn: CoreModule
 })
 export class AuthorService extends BaseService {
   constructor(private http: HttpClient) {
@@ -18,15 +19,13 @@ export class AuthorService extends BaseService {
     return this.http
       .get<BaseModel<Author>>(
         `${this.baseUrl}/authors`
-      )
-      .pipe(catchError(this.handleError));
+      );
   }
 
   public download(name: string) {
     return this.http
       .get<Blob>(this.baseUrl + "/authors/" + name + "/resume", {
         responseType: "blob" as "json"
-      })
-      .pipe(catchError(this.handleError));
+      });
   }
 }

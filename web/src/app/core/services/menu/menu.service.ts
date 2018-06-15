@@ -1,13 +1,15 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { BaseService } from "../base.service";
-import { catchError, retry } from "rxjs/operators";
 
+import { BaseService } from "../base.service";
 import { BaseModel } from "../base.model";
+
 import { Menu } from "./menu.model";
 
+import { CoreModule } from "../../core.module";
+
 @Injectable({
-  providedIn: "root"
+  providedIn: CoreModule
 })
 export class MenuService extends BaseService {
   constructor(private http: HttpClient) {
@@ -16,7 +18,6 @@ export class MenuService extends BaseService {
 
   public get() {
     return this.http
-      .get<BaseModel<Menu>>(this.baseUrl + "/menus")
-      .pipe(catchError(this.handleError));
+      .get<BaseModel<Menu>>(this.baseUrl + "/menus");
   }
 }

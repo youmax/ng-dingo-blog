@@ -1,25 +1,20 @@
 import { Injectable } from "@angular/core";
 import { TranslateLoader } from "@ngx-translate/core";
 import { HttpClient } from "@angular/common/http";
+import { environment } from "@env/environment";
 
-import { BaseService } from "../base.service";
-
-import { of } from "rxjs";
 import { Observable } from "rxjs/Observable";
 import { map } from "rxjs/operators";
 
 import { BaseModel } from "@app/core";
 
 @Injectable()
-export class TranslateHttpLoader extends BaseService
-  implements TranslateLoader {
-  constructor(private http: HttpClient) {
-    super();
-  }
+export class TranslateHttpLoader implements TranslateLoader {
+  constructor(private http: HttpClient) {}
 
   getTranslation(lang: string): Observable<Object> {
     return this.http
-      .get<BaseModel<Object>>(`${this.baseUrl}/trans/${lang}`)
+      .get<BaseModel<Object>>(`${environment.apiUrl}/trans/${lang}`)
       .pipe(map(data => data.data));
   }
 }

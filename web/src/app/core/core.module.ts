@@ -4,23 +4,24 @@ import { HttpClientModule } from "@angular/common/http";
 import { TranslateModule } from "@ngx-translate/core";
 
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
-import { DingoHttpInterceptor } from "./services/dingo.interceptor";
-
-import { AuthorService } from "./services/author/author.service";
-import { MenuService } from "./services/menu/menu.service";
-import { GlobalService } from "./services/global/global.service";
+import {
+  HttpHeaderInterceptor,
+  HttpErrorInterceptor
+} from "./inteceptors/index";
 
 @NgModule({
   imports: [CommonModule, HttpClientModule, TranslateModule.forChild()],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: DingoHttpInterceptor,
+      useClass: HttpHeaderInterceptor,
       multi: true
     },
-    AuthorService,
-    MenuService,
-    GlobalService
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true,
+    }
   ],
   declarations: []
 })

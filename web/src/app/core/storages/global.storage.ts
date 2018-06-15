@@ -1,10 +1,12 @@
 import { Injectable } from "@angular/core";
-import { AuthorService } from "../author/author.service";
-import { Author } from "../author/author.model";
+import { AuthorService } from "../services/author/author.service";
+import { Author } from "../services/author/author.model";
 import { TranslateService } from "@ngx-translate/core";
 
+import { CoreModule } from "../core.module";
+
 @Injectable({
-  providedIn: "root"
+  providedIn: CoreModule
 })
 export class GlobalService {
   public author: Author;

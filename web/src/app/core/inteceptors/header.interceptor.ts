@@ -10,7 +10,7 @@ import {
 import { Observable } from "rxjs";
 
 @Injectable()
-export class DingoHttpInterceptor implements HttpInterceptor {
+export class HttpHeaderInterceptor implements HttpInterceptor {
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
@@ -20,7 +20,6 @@ export class DingoHttpInterceptor implements HttpInterceptor {
         .set("Accept", "application/vnd.blog.v1+json")
         .append("Accept-Language", localStorage.getItem("lang"))
     });
-    console.log(authReq);
     return next.handle(authReq);
   }
 }

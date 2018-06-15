@@ -13,8 +13,7 @@ export class FooterComponent implements OnInit {
     protected global: GlobalService
   ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   getLangName(lang: string) {
     return "FOOTER." + lang.toUpperCase();
