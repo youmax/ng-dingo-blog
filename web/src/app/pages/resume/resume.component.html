@@ -6,7 +6,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ 'author.name' | storage }}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{ 'author.job' | storage }}</h6>
-          <p class="card-text">{{ 'author.introduction' | storage }}</p>
+          <p class="card-text" [innerHtml]="('author.introduction'|storage|html)"></p>
           <a href="{{ link.url }}" *ngFor="let link of ('author.socialLinks'|storage)" target="_blank">
             <span class="fa {{ link.icon }} mr-1"></span>
           </a>
@@ -85,7 +85,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ experience.name }}</h5>
               <h6 class="card-subtitle mb-2 text-muted"> {{ experience.position }}</h6>
-              {{ experience.desc }}
+              <p [innerHtml]="experience.desc"></p>
             </div>
           </div>
         </div>

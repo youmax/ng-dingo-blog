@@ -26,9 +26,12 @@ class AuthorTransformer extends TransformerAbstract
         return [
             'id' => $author->id,
             'name' => $author->name,
+            'email' => $author->email,
+            'banner' => $author->banner,
+            'background' => $author->background,
             'job' => $author->job,
             'greeting' => $author->greeting,
-            'introduction' => $author->introduction,
+            'introduction' => htmlspecialchars_decode($author->introduction),
             'socialLinks' => $author->socialLinks,
             'services' => $this->translateFields($author->services, ['title', 'desc']),
             'location' => $author->location,

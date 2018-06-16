@@ -16,6 +16,7 @@ $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', ['namespace' => 'App\Http\Controllers'], function ($api) {
     # Author routes
     resource('authors', 'AuthorController');
+    $api->get('author/resume/{name}', ['uses'=>'AuthorController@resume', 'as'=>'author.resume']);
     # Menu routes
     resource('menus', 'MenuController');
     # Translation routes

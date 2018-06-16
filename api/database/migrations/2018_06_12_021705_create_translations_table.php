@@ -79,7 +79,7 @@ class CreateTranslationsTable extends Migration
                 "WELCOME" => "歡迎，訪客",
                 "START" => "立即開始",
                 "RECENT" => "最近作品",
-                "RECENT_DESC" => '最新線上的作品。'
+                "RECENT_DESC" => '上線部署中'
             ],
             "RESUME" => [
                 "TITLE" => "簡歷",

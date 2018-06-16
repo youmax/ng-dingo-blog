@@ -14,6 +14,8 @@ class Author extends Model
         'name',
         'email',
         'job',
+        'banner',
+        'background',
         'greeting',
         'introduction',
         'socialLinks',

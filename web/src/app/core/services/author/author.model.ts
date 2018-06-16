@@ -18,8 +18,11 @@ export interface Author {
   id: string;
   name: string;
   job: string;
+  email: string;
+  banner: string;
+  background: string;
   greeting: string;
-  services: AuthorCustomService [];
+  services: AuthorCustomService[];
   location: AuthorLocation;
   skills: AuthorSkill[];
 }

@@ -17,6 +17,8 @@ class CreateAuthorsTable extends Migration
         Schema::create('authors', function (Blueprint $table) {
             $table->string('name');
             $table->string('email');
+            $table->json('banner');
+            $table->json('background');
             $table->json('job');
             $table->json('greeting');
             $table->json('introduction');
@@ -32,6 +34,8 @@ class CreateAuthorsTable extends Migration
         Author::create([
             'name' => 'Nick',
             'email' => 'youmax210139@gmail.com',
+            'banner' => 'https://api.test/img/banner.jpg',
+            'background' => 'https://api.test/img/background.jpg',
             'job' => ['en' => 'PHP developer', 'cn' => 'PHP程序員'],
             'greeting' => [
                 'en' => 'Hi there, my name is Nick and I am good at web application and game development. Have a look through my portfolio items see what I can do for you.',
@@ -39,7 +43,16 @@ class CreateAuthorsTable extends Migration
             ],
             'introduction' => [
                 'en' => 'Hello! I’m Nick. PHP Developer with over 6 years of experience. Experienced with all stages of the development cycle for dynamic web projects. Having an in-depth knowledge including advanced CSS3, JavaScript, Angular2+, PHP. Strong background in management and leadership.',
-                'cn' => '你好，我叫Nick。有6年PHP開發經驗，有維護線上專案經驗。熟練使用Javascript，CSS，PHP，Angular2＋，有項目開發管理經驗。',
+                'cn' => e('
+                        
+                        <ul><li>6年PHP開發經驗。</li>
+                        <li>維護線上專案經驗。</li>
+                        <li>熟練使用Javascript及Angular2＋框架，了解javascript,CSS原理。</li>
+                        <li>熟練使用PHP及Laravel框架，後端串接過Omnipay金流，郵件第三方服務。</li>
+                        <li>能建置NGINX，Apache環境。</li>
+                        <li>熟悉Mysql事務功能。</li>
+                        <li>虛擬化容器Docker的基本使用。</li>
+                        </ul>'),
             ],
             'socialLinks' =>[
                 ['name'=>'Google+', 'url'=> 'https://plus.google.com/u/0/+shujiYuan', 'icon'=>'fa-google-plus'],
@@ -183,7 +196,7 @@ class CreateAuthorsTable extends Migration
                     ],
                     "desc" => [
                         'en' => "I completed this degree from this prestigious insitution.",
-                        'cn' => '修完所有學分。',
+                        'cn' => '學習自然語言處理，修完所有學分。',
                     ],
                 ],
             ],
@@ -203,8 +216,9 @@ class CreateAuthorsTable extends Migration
                     ],
                     "desc" => [
                         'en' => "",
-                        'cn' => '游戲官網開發。
-                                 游戲API開發',
+                        'cn' => '<p>負責游戲官網開發以及後台用戶管理。</p>
+                                 <p>游戲API開發，如百家樂，21點撲克，加勒比撲克，水果盤數據格式設計。</p>
+                                 <p>同時管理游戲客戶端版本更新。</p>',
                     ],
                 ],
                 [
@@ -222,7 +236,7 @@ class CreateAuthorsTable extends Migration
                     ],
                     "desc" => [
                         'en' => ".",
-                        'cn' => '官網開發，後台管理介面開發，後端API服務開發',
+                        'cn' => '<p>後台及內部系統開發管理。</p><p>博弈系統小游戲接口。</p><p>管理公會系統用戶資料，並負責過數據庫搬移。</p>',
                     ],
                 ],
             ],

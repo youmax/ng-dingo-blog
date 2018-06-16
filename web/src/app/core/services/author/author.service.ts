@@ -24,7 +24,7 @@ export class AuthorService extends BaseService {
 
   public download(name: string) {
     return this.http
-      .get<Blob>(this.baseUrl + "/authors/" + name + "/resume", {
+      .get<Blob>(`${this.baseUrl}/author/resume/${name}`, {
         responseType: "blob" as "json"
       });
   }
