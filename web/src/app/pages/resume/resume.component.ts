@@ -28,7 +28,7 @@ export class PageResumeComponent implements OnInit {
     return this.storage.author.skills.slice(8, 14);
   }
 
-  protected download() {
+  public download() {
     this.authorService
       .download(this.storage.author.name)
       .subscribe(response => {

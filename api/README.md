@@ -59,3 +59,16 @@ The API server can be deployed on OSX with [Valet](https://laravel.com/docs/5.6/
 >> valet secure api
 ```
 Open your browser and go to  https://api.test
+## Docker useage
+Build docker image
+```
+docker build . -t blog:api
+```
+create docker container
+```
+docker run -d --name blog-api blog:api
+```
+remove docker container
+```
+docker rm blog-api
+```

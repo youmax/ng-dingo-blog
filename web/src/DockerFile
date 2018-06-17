@@ -1,0 +1,8 @@
+FROM buildpack-deps:jessie as node
+
+RUN npm -g install body-parser angular2-universal preboot express && typings install node express body-parser serve-static express-serve-static-core mime --ambient
+
+WORKDIR /app
+
+COPY ./dist/web /app
+

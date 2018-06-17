@@ -1,0 +1,19 @@
+version: "2"
+services:
+  api:
+    build:
+      context: ./api
+    working_dir: /var/www
+    volumes:
+      - ./api:/var/www
+    # enviroments:
+  # The Web Server
+  nginx:
+    build:
+      context: ./
+      dockerfile: nginx.dockerfile
+    working_dir: /var/www
+    volumes_from:
+      - api
+    ports:
+      - 8080:80
