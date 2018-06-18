@@ -3,9 +3,12 @@ services:
   api:
     build:
       context: ./api
+    restart: always
     working_dir: /var/www
     volumes:
       - ./api:/var/www
+    links:
+      - mongo
     # enviroments:
   # The Web Server
   nginx:
@@ -19,11 +22,9 @@ services:
       - 8080:80
         # The Database
   mongo:
+    container_name: mongo
     image: mongo:3.6.5-jessie
     volumes:
-      - ~/.mongo/blog:/data/db
+      - /data/blog:/data/db
     ports:
         - "28000:27017"
-
-volumes:
-  dbdata:
