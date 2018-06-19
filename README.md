@@ -1,7 +1,7 @@
 # Build Composer image
 install docker on your machine, then run command 
 ```
-docker build . -t composer/blog
+docker build -f composer.dockerfile . -t composer/blog
 ```
 you can see the image via 'docker images'
 ```
