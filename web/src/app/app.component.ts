@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { GlobalStorage } from "@app/shared";
-import { DomSanitizer, SafeStyle } from "@angular/platform-browser";
+import { DomSanitizer } from "@angular/platform-browser";
 declare const $: any;
 
 @Component({
@@ -9,18 +9,17 @@ declare const $: any;
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-  public backgroundImg: SafeStyle;
-
   constructor(
     protected storage: GlobalStorage,
     protected sanitizer: DomSanitizer
   ) {}
   ngOnInit() {
-    this.backgroundImg = this.sanitizer.bypassSecurityTrustStyle(
-      `url(${this.storage.author.background })`
-    );
-    $(document).ready(function() {
+    $(document).ready(() => {
       $("body").bootstrapMaterialDesign();
+      $("body").css(
+        "background-image",
+        `url('${this.storage.author.background}')`
+      );
     });
   }
 }

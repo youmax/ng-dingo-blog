@@ -16,6 +16,7 @@ export class GlobalStorage {
   }
 
   protected _app_init_promise;
+  protected _interval; // check data is loaded
 
   constructor(
     protected authorService: AuthorService,
@@ -42,8 +43,9 @@ export class GlobalStorage {
 
   public load() {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
+      this._interval = setInterval(() => {
         if (this._author && this._menus) {
+          clearInterval(this._interval);
           resolve();
         }
       }, 1000);
