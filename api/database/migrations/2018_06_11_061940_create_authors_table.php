@@ -44,15 +44,11 @@ class CreateAuthorsTable extends Migration
             'introduction' => [
                 'en' => 'Hello! I’m Nick. PHP Developer with over 6 years of experience. Experienced with all stages of the development cycle for dynamic web projects. Having an in-depth knowledge including advanced CSS3, JavaScript, Angular2+, PHP. Strong background in management and leadership.',
                 'cn' => e('
-                        
-                        <ul><li>6年PHP開發經驗。</li>
-                        <li>維護線上專案經驗。</li>
-                        <li>熟練使用Javascript及Angular2＋框架，了解javascript,CSS原理。</li>
-                        <li>熟練使用PHP及Laravel框架，後端串接過Omnipay金流，郵件第三方服務。</li>
-                        <li>能建置NGINX，Apache環境。</li>
-                        <li>熟悉Mysql事務功能。</li>
-                        <li>虛擬化容器Docker的基本使用。</li>
-                        </ul>'),
+                         <p style="padding-left:20px">php工程師，共6年工作經驗，三年BC經驗。<br>
+                         參與過大型線上遊戲專案，維護過線上專案及數據庫。<br>
+                         開發過爬蟲網站，遊戲官方網站，客服排班系統，後台金流管理，USB分享項目。<br>
+                         有半年的敏捷開發經驗，担任過項目負責人。<br>
+                         喜歡crossfit，有團隊合作精神。</p>'),
             ],
             'socialLinks' =>[
                 ['name'=>'Google+', 'url'=> 'https://plus.google.com/u/0/+shujiYuan', 'icon'=>'fa-google-plus'],
@@ -172,8 +168,8 @@ class CreateAuthorsTable extends Migration
                 [
                     "date" => "2008-2010",
                     "school" => [
-                        'en' => "NCUE University",
-                        'cn' => '國立彰化師範大學',
+                        'en' => "NCUE University CSIE",
+                        'cn' => '國立彰化師範大學 資訊工程系',
                     ],
                     "degree" => [
                         'en' => "Banchlor degree",
@@ -181,14 +177,14 @@ class CreateAuthorsTable extends Migration
                     ],
                     "desc" => [
                         'en' => "I was major in Computer Science and successful completed all the credits.Image Processing and Data Mining are the primary domains I studied for.",
-                        'cn' => '主修軟件工程並完成所有學分。學習影像處理，資料探勘等領域。',
+                        'cn' => '主修軟體工程並完成所有學分。偏好影像處理，資料探勘領域。',
                     ],
                 ],
                 [
                     "date" => "2010-2012",
                     "school" => [
-                        'en' => "NCUE University",
-                        'cn' => '國立彰化師範大學',
+                        'en' => "NCUE University CSIE",
+                        'cn' => '國立彰化師範大學 資訊工程系',
                     ],
                     "degree" => [
                         'en' => "Master degree",
@@ -196,11 +192,31 @@ class CreateAuthorsTable extends Migration
                     ],
                     "desc" => [
                         'en' => "I completed this degree from this prestigious insitution.",
-                        'cn' => '學習自然語言處理，修完所有學分。',
+                        'cn' => '學習自然語言處理，研翵完所有學分。',
                     ],
                 ],
             ],
             "experiences" => [
+                [
+                    "name" => [
+                        'en' => "Go1010 Inc",
+                        'cn' => '港商傳動數碼',
+                    ],
+                    "position" => [
+                        'en' => "Senior PHP Developer",
+                        'cn' => '資深PHP專員',
+                    ],
+                    "date" => [
+                        'en' => "Sep 2015 - April 2017",
+                        'cn' => '四月 2017 - 目前',
+                    ],
+                    "desc" => [
+                        'en' => "",
+                        'cn' => '<p>負責游戲官網開發以及後台用戶管理。</p>
+                                 <p>游戲API開發，如百家樂，21點撲克，加勒比撲克，水果盤數據格式設計。</p>
+                                 <p>同時管理游戲客戶端版本更新。</p>',
+                    ],
+                ],
                 [
                     "name" => [
                         'en' => "Go1010 Inc",
@@ -228,7 +244,7 @@ class CreateAuthorsTable extends Migration
                     ],
                     "position" => [
                         'en' => "Senior PHP Developer",
-                        'cn' => '資深PHP專員',
+                        'cn' => '資深PHP工程師',
                     ],
                     "date" => [
                         'en' => "Jul 2013 - August 2015",
@@ -236,7 +252,21 @@ class CreateAuthorsTable extends Migration
                     ],
                     "desc" => [
                         'en' => ".",
-                        'cn' => '<p>後台及內部系統開發管理。</p><p>博弈系統小游戲接口。</p><p>管理公會系統用戶資料，並負責過數據庫搬移。</p>',
+                        'cn' => '<p>開發客服管理系統，導入Twilio進行測試。</p>
+                                 <p>開發游戲博弈系統。前端使用Flash/C＋＋開發用戶介面，
+                                    後端C＋＋服務器加入對應packet處理，後台PHP根據數據
+                                    庫資料產生對應報表。
+                                </p>
+                                 <p>分析線上數據庫與次版數據庫格式差異，撰寫對應T-SQL。
+                                    在版本更新時，進行MS SQL數據庫資料遷移。
+                                 </p>
+                                 <p>
+                                    內部編輯器製作，產生游戲客戶端需要的XML檔案。
+                                 </p>
+                                 <p>
+                                    AVG游戲對接PHP後端的數據設計及開發，撰寫相關PHP單元
+                                    測試。
+                                 </p>',
                     ],
                 ],
             ],

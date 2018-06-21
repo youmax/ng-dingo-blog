@@ -4,8 +4,10 @@
     <div class="col-md-9" id="resume">
       <div class="card introduction">
         <div class="card-body">
-          <h5 class="card-title">{{ 'author.name' | storage }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ 'author.job' | storage }}</h6>
+          <h5 class="card-title text-center">{{ 'author.name' | storage }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted text-center">
+            <a href="mailto:{{'author.email' | storage }}"> Email:{{ 'author.email' | storage }}</a>
+          </h6>
           <p class="card-text" [innerHtml]="('author.introduction'|storage|html)"></p>
         </div>
         <div class="card-footer text-center">
