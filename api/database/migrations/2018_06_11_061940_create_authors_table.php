@@ -34,8 +34,8 @@ class CreateAuthorsTable extends Migration
         Author::create([
             'name' => 'Nick',
             'email' => 'youmax210139@gmail.com',
-            'banner' => 'https://api.test/img/banner.jpg',
-            'background' => 'https://api.test/img/background.jpg',
+            'banner' => 'http://blogapi.desuga.me/img/banner.jpg',
+            'background' => 'http://blogapi.desuga.me/img/background.jpg',
             'job' => ['en' => 'PHP developer', 'cn' => 'PHP程序員'],
             'greeting' => [
                 'en' => 'Hi there, my name is Nick and I am good at web application and game development. Have a look through my portfolio items see what I can do for you.',
