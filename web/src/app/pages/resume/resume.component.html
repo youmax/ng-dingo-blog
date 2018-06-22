@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <div class="col-lg-7">
+        <div class="col-lg-7 d-none d-lg-block">
           <div class="card">
             <header>{{ 'RESUME.ADDITIONAL_SKILLS' | translate }}</header>
             <div class="card-body">
@@ -64,19 +64,7 @@
         </div>
       </div>
 
-      <h3> {{ 'RESUME.EDUCATION' | translate }} </h3>
-      <div class="card-deck">
-        <div class="card" *ngFor="let education of ('author.educations'|storage)">
-          <header>{{ education.date }}</header>
-          <div class="card-body">
-            <h6 class="card-subtitle mb-2 text-muted"> {{ education.school }}</h6>
-            <i> {{ education.degree }}</i>
-            <br> {{ education.desc }}
-          </div>
-        </div>
-      </div>
-
-      <h3> {{ 'RESUME.EDUCATION' | translate }} </h3>
+      <h3> {{ 'RESUME.EXPERIENCE' | translate }} </h3>
       <div class="row experience">
         <div class="offset-lg-4 col-md-12 col-lg-8 ex-container">
           <div class="card" *ngFor="let experience of ('author.experiences'|storage)">
@@ -89,6 +77,19 @@
           </div>
         </div>
       </div>
+
+      <h3> {{ 'RESUME.EDUCATION' | translate }} </h3>
+      <div class="card-deck">
+        <div class="card" *ngFor="let education of ('author.educations'|storage)">
+          <header>{{ education.date }}</header>
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted"> {{ education.school }}</h6>
+            <i> {{ education.degree }}</i>
+            <br> {{ education.desc }}
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="col-md-3">

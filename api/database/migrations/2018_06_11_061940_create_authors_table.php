@@ -44,11 +44,11 @@ class CreateAuthorsTable extends Migration
             'introduction' => [
                 'en' => 'Hello! I’m Nick. PHP Developer with over 6 years of experience. Experienced with all stages of the development cycle for dynamic web projects. Having an in-depth knowledge including advanced CSS3, JavaScript, Angular2+, PHP. Strong background in management and leadership.',
                 'cn' => e('
-                         <p style="padding-left:20px">php工程師，共6年工作經驗，三年BC經驗。<br>
+                         <p style="padding-left:20px">php工程師，6年工作經驗，三年BC經驗。<br>
                          參與過大型線上遊戲專案，維護過線上專案及數據庫。<br>
                          開發過爬蟲網站，遊戲官方網站，客服排班系統，後台金流管理，USB分享項目。<br>
-                         有半年的敏捷開發經驗，担任過項目負責人。<br>
-                         喜歡crossfit，有團隊合作精神。</p>'),
+                         有半年敏捷開發經驗，担任過項目負責人。<br>
+                         喜歡crossfit，具團隊合作精神。</p>'),
             ],
             'socialLinks' =>[
                 ['name'=>'Google+', 'url'=> 'https://plus.google.com/u/0/+shujiYuan', 'icon'=>'fa-google-plus'],
@@ -85,7 +85,7 @@ class CreateAuthorsTable extends Migration
                     ],
                     'desc' => [
                         'en' => 'I\'m good at design web game and pc game using Phaser and Unity.',
-                        'cn' => '擅長使用Phaser及Unity開發頁游及端游。',
+                        'cn' => '擅長使用Phaser及Unity開發頁游及端游。。',
                     ],
 
                 ],
@@ -177,7 +177,7 @@ class CreateAuthorsTable extends Migration
                     ],
                     "desc" => [
                         'en' => "I was major in Computer Science and successful completed all the credits.Image Processing and Data Mining are the primary domains I studied for.",
-                        'cn' => '主修軟體工程並完成所有學分。偏好影像處理，資料探勘領域。',
+                        'cn' => '主修軟體工程並完成所有學分。擅長影像處理，資料探勘領域。',
                     ],
                 ],
                 [
@@ -192,29 +192,30 @@ class CreateAuthorsTable extends Migration
                     ],
                     "desc" => [
                         'en' => "I completed this degree from this prestigious insitution.",
-                        'cn' => '學習自然語言處理，研翵完所有學分。',
+                        'cn' => '研習完所有學分。學習自然語言處理領域，以中研院斷詞系統將中文句子斷詞，
+                                 並基於知網詞庫及相似度演算法對詞組進行語意分析。',
                     ],
                 ],
             ],
             "experiences" => [
                 [
                     "name" => [
-                        'en' => "Go1010 Inc",
-                        'cn' => '港商傳動數碼',
+                        'en' => "****",
+                        'cn' => '****',
                     ],
                     "position" => [
-                        'en' => "Senior PHP Developer",
-                        'cn' => '資深PHP專員',
+                        'en' => "PHP Developer",
+                        'cn' => 'PHP專員',
                     ],
                     "date" => [
-                        'en' => "Sep 2015 - April 2017",
+                        'en' => "April 2017 - Current",
                         'cn' => '四月 2017 - 目前',
                     ],
                     "desc" => [
                         'en' => "",
-                        'cn' => '<p>負責游戲官網開發以及後台用戶管理。</p>
-                                 <p>游戲API開發，如百家樂，21點撲克，加勒比撲克，水果盤數據格式設計。</p>
-                                 <p>同時管理游戲客戶端版本更新。</p>',
+                        'cn' => '<p>USB專案開發管理，撰寫Flask及celery-kombu腳本對接Eltima Network Gate驅動API，後台接口開發。</p>
+                                 <p>USB前台介面開發，使用angular 4開發管理介面，實現修改網卡設定，USB分享及釋放功能。</p>
+                                 <p>金流系統開發，撰寫前後台頁面，對接etcd服務，對接網銀出款服務，對外API，及相關單元測試。</p>',
                     ],
                 ],
                 [
@@ -224,7 +225,7 @@ class CreateAuthorsTable extends Migration
                     ],
                     "position" => [
                         'en' => "Senior PHP Developer",
-                        'cn' => '資深PHP專員',
+                        'cn' => '資深PHP工程師',
                     ],
                     "date" => [
                         'en' => "Sep 2015 - April 2017",
@@ -232,9 +233,11 @@ class CreateAuthorsTable extends Migration
                     ],
                     "desc" => [
                         'en' => "",
-                        'cn' => '<p>負責游戲官網開發以及後台用戶管理。</p>
-                                 <p>游戲API開發，如百家樂，21點撲克，加勒比撲克，水果盤數據格式設計。</p>
-                                 <p>同時管理游戲客戶端版本更新。</p>',
+                        'cn' => '<p>游戲官網開發，包含使用者登入及後台管理，內容管理功能。</p>
+                                 <p>爬蟲網站開發，PHPquery獲取Yahoo運動網站數據後導入數據庫。</p>
+                                 <p>游戲API開發，包含Video Poker,百家樂，21點撲克，加勒比撲克的數據設計及單元測試。</p>
+                                 <p>整合Rachet套件，提供websocket client連接，訂關函式撰寫。</p>
+                                 <p>負責客戶端Unity執行檔更新，asset bundle資源管理。</p>',
                     ],
                 ],
                 [
@@ -248,23 +251,25 @@ class CreateAuthorsTable extends Migration
                     ],
                     "date" => [
                         'en' => "Jul 2013 - August 2015",
-                        'cn' => '六月 2013 - 八月 2015',
+                        'cn' => '七月 2013 - 八月 2015',
                     ],
                     "desc" => [
                         'en' => ".",
-                        'cn' => '<p>開發客服管理系統，導入Twilio進行測試。</p>
-                                 <p>開發游戲博弈系統。前端使用Flash/C＋＋開發用戶介面，
-                                    後端C＋＋服務器加入對應packet處理，後台PHP根據數據
-                                    庫資料產生對應報表。
+                        'cn' => '<p>客服管理系統開發，包含客服人員的排班，權限管理，任務指派
+                                    以及玩家意見區。</p>
+                                 <p>博弈系統開發趣拼圖，比大小游戲，
+                                    使用Flash/C＋＋開發用戶介面，
+                                    C＋＋撰寫遊戲邏輯，
+                                    後台PHP處理數據庫資料產生對應報表。
                                 </p>
-                                 <p>分析線上數據庫與次版數據庫格式差異，撰寫對應T-SQL。
-                                    在版本更新時，進行MS SQL數據庫資料遷移。
+                                 <p>分析線上數據庫與次版數據庫格式差異，撰寫對應T-SQL，進行MS SQL數據庫資料遷移。
                                  </p>
                                  <p>
-                                    內部編輯器製作，產生游戲客戶端需要的XML檔案。
+                                    內部編輯器製作。製作道具，倉庫編輯器，
+                                    產生游戲客戶端對應的XML檔案。
                                  </p>
                                  <p>
-                                    AVG游戲對接PHP後端的數據設計及開發，撰寫相關PHP單元
+                                    AVG游戲PHP後端API數據設計開發，撰寫相關單元
                                     測試。
                                  </p>',
                     ],
