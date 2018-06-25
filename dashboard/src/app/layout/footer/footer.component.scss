@@ -1,0 +1,24 @@
+footer {
+    padding: 20px 30px;
+    background: #222;
+    color: #999;
+    font-size: 0.923em;
+    li{
+        padding:4px;
+    }
+    .nav-item a {
+        color: #ddd;
+        cursor: pointer;
+        &.active,
+        &:hover {
+            color: #5ac1ae
+        }
+    }
+    a{
+        color: #999;
+        &:hover{
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}

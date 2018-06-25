@@ -1,0 +1,15 @@
+.container {
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 0 40px;
+  }
+  .container {
+    width: 1000px;
+  }
+}

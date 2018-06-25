@@ -1,0 +1,28 @@
+.portfolio {
+    .col-md-4 {
+        margin-bottom: 30px;
+    }
+    .img-wrapper {
+        transform: translate3d(0, 0, 0);
+        overflow: hidden;
+        &:hover .img-fluid {
+            transform: scale3d(1.2, 1.2, 1.2);
+        }
+        .img-fluid {
+            transition: all 1.5s cubic-bezier(0, 0, 0.2, 1);
+        }
+    }
+    h5 {
+        padding: 15px 15px 10px;
+        background: #f7f7f7;
+        font-size: 1.077em;
+        font-weight: 600;
+        >a {
+            color: #222222;
+        }
+        >a:hover {
+            color: #5ac1ae;
+            text-decoration: none;
+        }
+    }
+}
