@@ -42,13 +42,14 @@ export class GlobalStorage {
   }
 
   public load() {
-    return new Promise((resolve, reject) => {
-      this._interval = setInterval(() => {
-        if (this._author && this._menus) {
-          clearInterval(this._interval);
-          resolve();
-        }
-      }, 1000);
-    });
+    return true;
+  //   return new Promise((resolve, reject) => {
+  //     this._interval = setInterval(() => {
+  //       if (this._author && this._menus) {
+  //         clearInterval(this._interval);
+  //         resolve();
+  //       }
+  //     }, 1000);
+  //   });
   }
 }

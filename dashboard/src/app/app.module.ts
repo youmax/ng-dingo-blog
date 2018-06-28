@@ -11,6 +11,7 @@ import { TranslateHttpLoader } from "@app/core";
 import { StorageModule, GlobalStorage } from "@app/shared";
 import { AppComponent } from "./app.component";
 import { HttpClient } from "@angular/common/http";
+import { LoginComponent } from './pages/login/login.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -36,7 +37,7 @@ export function StorageFactory(gs: GlobalStorage) {
     LayoutModule,
     AppRoutingModule
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginComponent],
   providers: [
     {
       provide: APP_INITIALIZER,
