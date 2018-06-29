@@ -1,8 +1,15 @@
 footer {
-    position: absolute;
     bottom: 0;
-    width: 100%;
-    background: #2f333e;
-    color: #fff;
-    padding: 20px 10px;
+    left: 0;
+    padding: 17px 15px;
+    right: 0;
+    border-top: 1px solid #e9ecef;
+    background: #fff;
+    color: #212529;
+}
+
+@media (min-width: 769px) {
+  footer {
+    margin-left: 220px;
+  }
 }
